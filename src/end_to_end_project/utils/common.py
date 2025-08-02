@@ -104,7 +104,7 @@ def load_bin(path: Path) -> Any:
     return data
 
 @typechecked
-def get_size(path: Path) -> int:
+def get_size(path: Path) -> str:
     """
     Get size of file
 

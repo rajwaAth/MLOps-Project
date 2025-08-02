@@ -413,3 +413,208 @@ Source-Age: 100
 [2025-07-31 22:17:27,215: INFO: common: Created directory at: artifacts]
 [2025-07-31 22:17:27,216: INFO: common: Created directory at: artifacts/model_training]
 [2025-07-31 22:17:27,303: INFO: main: >>>>>> stage Model Training Stage completed <<<<<<]
+[2025-08-02 10:54:04,342: INFO: utils: NumExpr defaulting to 4 threads.]
+[2025-08-02 22:35:31,748: INFO: common: YAML file: config\config.yaml loaded successfully]
+[2025-08-02 22:35:31,786: INFO: common: YAML file: params.yaml loaded successfully]
+[2025-08-02 22:35:31,814: INFO: common: YAML file: schema.yaml loaded successfully]
+[2025-08-02 22:35:31,818: INFO: common: Created directory at: artifacts/model_evaluation]
+[2025-08-02 22:35:33,098: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2025-08-02 22:35:33,113: INFO: helpers: Accessing as rajwaAth]
+[2025-08-02 22:35:34,247: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/repos/rajwaAth/MLOps-Project "HTTP/1.1 200 OK"]
+[2025-08-02 22:35:35,199: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2025-08-02 22:35:35,199: INFO: helpers: Initialized MLflow to track repo "rajwaAth/MLOps-Project"]
+[2025-08-02 22:35:35,215: INFO: helpers: Repository rajwaAth/MLOps-Project initialized!]
+[2025-08-02 22:36:22,800: INFO: common: YAML file: config\config.yaml loaded successfully]
+[2025-08-02 22:36:22,804: INFO: common: YAML file: params.yaml loaded successfully]
+[2025-08-02 22:36:22,811: INFO: common: YAML file: schema.yaml loaded successfully]
+[2025-08-02 22:36:22,814: INFO: common: Created directory at: artifacts/model_evaluation]
+[2025-08-02 22:36:24,788: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/repos/rajwaAth/MLOps-Project "HTTP/1.1 200 OK"]
+[2025-08-02 22:36:24,818: INFO: helpers: Initialized MLflow to track repo "rajwaAth/MLOps-Project"]
+[2025-08-02 22:36:24,833: INFO: helpers: Repository rajwaAth/MLOps-Project initialized!]
+[2025-08-02 22:36:24,943: INFO: common: JSON file saved at: artifacts\model_evaluation\metrics.json]
+[2025-08-02 22:43:14,256: INFO: common: YAML file: config\config.yaml loaded successfully]
+[2025-08-02 22:43:14,274: INFO: common: YAML file: params.yaml loaded successfully]
+[2025-08-02 22:43:14,299: INFO: common: YAML file: schema.yaml loaded successfully]
+[2025-08-02 22:43:14,301: INFO: common: Created directory at: artifacts/model_evaluation]
+[2025-08-02 22:43:15,229: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/repos/rajwaAth/MLOps-Project "HTTP/1.1 200 OK"]
+[2025-08-02 22:43:15,231: INFO: helpers: Initialized MLflow to track repo "rajwaAth/MLOps-Project"]
+[2025-08-02 22:43:15,231: INFO: helpers: Repository rajwaAth/MLOps-Project initialized!]
+[2025-08-02 22:43:15,294: INFO: common: JSON file saved at: artifacts\model_evaluation\metrics.json]
+[2025-08-02 23:02:19,670: INFO: common: YAML file: config\config.yaml loaded successfully]
+[2025-08-02 23:02:19,682: INFO: common: YAML file: params.yaml loaded successfully]
+[2025-08-02 23:02:19,690: INFO: common: YAML file: schema.yaml loaded successfully]
+[2025-08-02 23:02:19,697: INFO: common: Created directory at: artifacts/model_evaluation]
+[2025-08-02 23:02:20,664: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2025-08-02 23:02:20,664: INFO: helpers: Accessing as rajwaAth]
+[2025-08-02 23:02:21,654: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/repos/rajwaAth/MLOps-Project "HTTP/1.1 200 OK"]
+[2025-08-02 23:02:22,696: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2025-08-02 23:02:22,706: INFO: helpers: Initialized MLflow to track repo "rajwaAth/MLOps-Project"]
+[2025-08-02 23:02:22,714: INFO: helpers: Repository rajwaAth/MLOps-Project initialized!]
+[2025-08-02 23:02:23,086: INFO: common: JSON file saved at: artifacts\model_evaluation\metrics.json]
+[2025-08-02 23:15:07,858: INFO: common: YAML file: config\config.yaml loaded successfully]
+[2025-08-02 23:15:07,866: INFO: common: YAML file: params.yaml loaded successfully]
+[2025-08-02 23:15:07,871: INFO: common: YAML file: schema.yaml loaded successfully]
+[2025-08-02 23:15:07,875: INFO: common: Created directory at: artifacts/model_evaluation]
+[2025-08-02 23:15:08,715: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/repos/rajwaAth/MLOps-Project "HTTP/1.1 200 OK"]
+[2025-08-02 23:15:08,740: INFO: helpers: Initialized MLflow to track repo "rajwaAth/MLOps-Project"]
+[2025-08-02 23:15:08,744: INFO: helpers: Repository rajwaAth/MLOps-Project initialized!]
+[2025-08-02 23:15:08,849: INFO: common: JSON file saved at: artifacts\model_evaluation\metrics.json]
+[2025-08-02 23:22:57,036: INFO: main: >>>>>> stage Data Ingestion Stage started <<<<<<]
+[2025-08-02 23:22:57,046: INFO: common: YAML file: config\config.yaml loaded successfully]
+[2025-08-02 23:22:57,056: INFO: common: YAML file: params.yaml loaded successfully]
+[2025-08-02 23:22:57,056: INFO: common: YAML file: schema.yaml loaded successfully]
+[2025-08-02 23:22:57,056: INFO: common: Created directory at: artifacts]
+[2025-08-02 23:22:57,056: INFO: common: Created directory at: artifacts/data_ingestion]
+[2025-08-02 23:22:58,792: INFO: data_ingestion: Downloaded file: artifacts/data_ingestion/data.zip with following info: Connection: close
+Content-Length: 23329
+Cache-Control: max-age=300
+Content-Security-Policy: default-src 'none'; style-src 'unsafe-inline'; sandbox
+Content-Type: application/zip
+ETag: "c69888a4ae59bc5a893392785a938ccd4937981c06ba8a9d6a21aa52b4ab5b6e"
+Strict-Transport-Security: max-age=31536000
+X-Content-Type-Options: nosniff
+X-Frame-Options: deny
+X-XSS-Protection: 1; mode=block
+X-GitHub-Request-Id: 9C41:1660AB:FB5E8:33261E:688E3B62
+Accept-Ranges: bytes
+Date: Sat, 02 Aug 2025 16:22:59 GMT
+Via: 1.1 varnish
+X-Served-By: cache-qpg1220-QPG
+X-Cache: MISS
+X-Cache-Hits: 0
+X-Timer: S1754151779.393319,VS0,VE276
+Vary: Authorization,Accept-Encoding
+Access-Control-Allow-Origin: *
+Cross-Origin-Resource-Policy: cross-origin
+X-Fastly-Request-ID: 2f5ec3889305a9f0dd644a25f25b5638c994f90d
+Expires: Sat, 02 Aug 2025 16:27:59 GMT
+Source-Age: 0
+
+]
+[2025-08-02 23:22:58,853: INFO: data_ingestion: Extracted zip file to : artifacts/data_ingestion]
+[2025-08-02 23:22:58,856: INFO: main: >>>>>> stage Data Ingestion Stage completed <<<<<<]
+[2025-08-02 23:22:58,856: INFO: main: >>>>>> stage Data Validation Stage started <<<<<<]
+[2025-08-02 23:22:58,864: INFO: common: YAML file: config\config.yaml loaded successfully]
+[2025-08-02 23:22:58,865: INFO: common: YAML file: params.yaml loaded successfully]
+[2025-08-02 23:22:58,868: INFO: common: YAML file: schema.yaml loaded successfully]
+[2025-08-02 23:22:58,869: INFO: common: Created directory at: artifacts]
+[2025-08-02 23:22:58,872: INFO: common: Created directory at: artifacts/data_validation]
+[2025-08-02 23:22:58,925: INFO: main: >>>>>> stage Data Validation Stage completed <<<<<<]
+[2025-08-02 23:22:58,925: INFO: main: >>>>>> stage Data Transformation Stage started <<<<<<]
+[2025-08-02 23:22:58,934: INFO: common: YAML file: config\config.yaml loaded successfully]
+[2025-08-02 23:22:58,939: INFO: common: YAML file: params.yaml loaded successfully]
+[2025-08-02 23:22:58,943: INFO: common: YAML file: schema.yaml loaded successfully]
+[2025-08-02 23:22:58,944: INFO: common: Created directory at: artifacts]
+[2025-08-02 23:22:58,946: INFO: common: Created directory at: artifacts/data_transformation]
+[2025-08-02 23:22:58,992: INFO: data_transformation: Train and test data saved at artifacts\data_transformation]
+[2025-08-02 23:22:58,992: INFO: data_transformation: Train data shape: (1199, 12), Test data shape: (400, 12)]
+[2025-08-02 23:22:58,993: INFO: main: >>>>>> stage Data Transformation Stage completed <<<<<<]
+[2025-08-02 23:22:58,993: INFO: main: >>>>>> stage Model Training Stage started <<<<<<]
+[2025-08-02 23:22:58,998: INFO: common: YAML file: config\config.yaml loaded successfully]
+[2025-08-02 23:22:59,000: INFO: common: YAML file: params.yaml loaded successfully]
+[2025-08-02 23:22:59,004: INFO: common: YAML file: schema.yaml loaded successfully]
+[2025-08-02 23:22:59,005: INFO: common: Created directory at: artifacts]
+[2025-08-02 23:22:59,006: INFO: common: Created directory at: artifacts/model_training]
+[2025-08-02 23:22:59,056: INFO: main: >>>>>> stage Model Training Stage completed <<<<<<]
+[2025-08-02 23:22:59,057: INFO: main: >>>>>> stage Model Evaluation Stage started <<<<<<]
+[2025-08-02 23:22:59,060: INFO: common: YAML file: config\config.yaml loaded successfully]
+[2025-08-02 23:22:59,062: INFO: common: YAML file: params.yaml loaded successfully]
+[2025-08-02 23:22:59,065: INFO: common: YAML file: schema.yaml loaded successfully]
+[2025-08-02 23:22:59,066: INFO: common: Created directory at: artifacts]
+[2025-08-02 23:22:59,067: INFO: common: Created directory at: artifacts/model_evaluation]
+[2025-08-02 23:22:59,747: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2025-08-02 23:22:59,761: INFO: helpers: Accessing as rajwaAth]
+[2025-08-02 23:23:00,644: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/repos/rajwaAth/MLOps-Project "HTTP/1.1 200 OK"]
+[2025-08-02 23:23:01,352: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2025-08-02 23:23:01,352: INFO: helpers: Initialized MLflow to track repo "rajwaAth/MLOps-Project"]
+[2025-08-02 23:23:01,352: INFO: helpers: Repository rajwaAth/MLOps-Project initialized!]
+[2025-08-02 23:23:01,377: INFO: common: JSON file saved at: artifacts\model_evaluation\metrics.json]
+[2025-08-02 23:23:22,517: INFO: main: >>>>>> stage Model Evaluation Stage completed <<<<<<]
+[2025-08-02 23:29:51,761: INFO: main: >>>>>> stage Data Ingestion Stage started <<<<<<]
+[2025-08-02 23:29:51,765: INFO: common: YAML file: config\config.yaml loaded successfully]
+[2025-08-02 23:29:51,788: INFO: common: YAML file: params.yaml loaded successfully]
+[2025-08-02 23:29:51,791: INFO: common: YAML file: schema.yaml loaded successfully]
+[2025-08-02 23:29:51,792: INFO: common: Created directory at: artifacts]
+[2025-08-02 23:29:51,793: INFO: common: Created directory at: artifacts/data_ingestion]
+[2025-08-02 23:29:51,793: ERROR: main: the return value (str) is not an instance of int]
+Traceback (most recent call last):
+  File "c:\Users\admin\OneDrive\Dokumen\Portofolio\Data Sceince (Python)\End-to-end\main.py", line 13, in <module>
+    obj.main()
+  File "c:\users\admin\onedrive\dokumen\portofolio\data sceince (python)\end-to-end\src\end_to_end_project\pipeline\stage_01_data_ingestion.py", line 15, in main
+    data_ingestion.download_file()
+  File "c:\users\admin\onedrive\dokumen\portofolio\data sceince (python)\end-to-end\src\end_to_end_project\components\data_ingestion.py", line 21, in download_file
+    logger.info(f"File already exists of size: {get_size(Path(self.config.local_data_file))}")
+  File "c:\users\admin\onedrive\dokumen\portofolio\data sceince (python)\end-to-end\src\end_to_end_project\utils\common.py", line 118, in get_size
+    return f"{size_in_kb} KB"
+  File "C:\Users\admin\anaconda3\envs\n2nProject\lib\site-packages\typeguard\_functions.py", line 166, in check_return_type
+    check_type_internal(retval, annotation, memo)
+  File "C:\Users\admin\anaconda3\envs\n2nProject\lib\site-packages\typeguard\_checkers.py", line 965, in check_type_internal
+    raise TypeCheckError(f"is not an instance of {qualified_name(origin_type)}")
+typeguard.TypeCheckError: the return value (str) is not an instance of int
+[2025-08-02 23:31:29,539: INFO: main: >>>>>> stage Data Ingestion Stage started <<<<<<]
+[2025-08-02 23:31:29,539: INFO: common: YAML file: config\config.yaml loaded successfully]
+[2025-08-02 23:31:29,557: INFO: common: YAML file: params.yaml loaded successfully]
+[2025-08-02 23:31:29,560: INFO: common: YAML file: schema.yaml loaded successfully]
+[2025-08-02 23:31:29,560: INFO: common: Created directory at: artifacts]
+[2025-08-02 23:31:29,561: INFO: common: Created directory at: artifacts/data_ingestion]
+[2025-08-02 23:31:29,561: ERROR: main: the return value (str) is not an instance of int]
+Traceback (most recent call last):
+  File "c:\Users\admin\OneDrive\Dokumen\Portofolio\Data Sceince (Python)\End-to-end\main.py", line 13, in <module>
+    obj.main()
+  File "c:\users\admin\onedrive\dokumen\portofolio\data sceince (python)\end-to-end\src\end_to_end_project\pipeline\stage_01_data_ingestion.py", line 15, in main
+    data_ingestion.download_file()
+  File "c:\users\admin\onedrive\dokumen\portofolio\data sceince (python)\end-to-end\src\end_to_end_project\components\data_ingestion.py", line 21, in download_file
+    logger.info(f"File already exists of size: {get_size(Path(self.config.local_data_file))}")
+  File "c:\users\admin\onedrive\dokumen\portofolio\data sceince (python)\end-to-end\src\end_to_end_project\utils\common.py", line 118, in get_size
+    return f"{size_in_kb} KB"
+  File "C:\Users\admin\anaconda3\envs\n2nProject\lib\site-packages\typeguard\_functions.py", line 166, in check_return_type
+    check_type_internal(retval, annotation, memo)
+  File "C:\Users\admin\anaconda3\envs\n2nProject\lib\site-packages\typeguard\_checkers.py", line 965, in check_type_internal
+    raise TypeCheckError(f"is not an instance of {qualified_name(origin_type)}")
+typeguard.TypeCheckError: the return value (str) is not an instance of int
+[2025-08-02 23:35:57,605: INFO: main: >>>>>> stage Data Ingestion Stage started <<<<<<]
+[2025-08-02 23:35:57,605: INFO: common: YAML file: config\config.yaml loaded successfully]
+[2025-08-02 23:35:57,620: INFO: common: YAML file: params.yaml loaded successfully]
+[2025-08-02 23:35:57,626: INFO: common: YAML file: schema.yaml loaded successfully]
+[2025-08-02 23:35:57,629: INFO: common: Created directory at: artifacts]
+[2025-08-02 23:35:57,630: INFO: common: Created directory at: artifacts/data_ingestion]
+[2025-08-02 23:35:57,632: INFO: data_ingestion: File already exists of size: 22.7822265625 KB]
+[2025-08-02 23:35:57,638: INFO: data_ingestion: Extracted zip file to : artifacts/data_ingestion]
+[2025-08-02 23:35:57,638: INFO: main: >>>>>> stage Data Ingestion Stage completed <<<<<<]
+[2025-08-02 23:35:57,638: INFO: main: >>>>>> stage Data Validation Stage started <<<<<<]
+[2025-08-02 23:35:57,653: INFO: common: YAML file: config\config.yaml loaded successfully]
+[2025-08-02 23:35:57,653: INFO: common: YAML file: params.yaml loaded successfully]
+[2025-08-02 23:35:57,670: INFO: common: YAML file: schema.yaml loaded successfully]
+[2025-08-02 23:35:57,670: INFO: common: Created directory at: artifacts]
+[2025-08-02 23:35:57,670: INFO: common: Created directory at: artifacts/data_validation]
+[2025-08-02 23:35:57,753: INFO: main: >>>>>> stage Data Validation Stage completed <<<<<<]
+[2025-08-02 23:35:57,753: INFO: main: >>>>>> stage Data Transformation Stage started <<<<<<]
+[2025-08-02 23:35:57,775: INFO: common: YAML file: config\config.yaml loaded successfully]
+[2025-08-02 23:35:57,776: INFO: common: YAML file: params.yaml loaded successfully]
+[2025-08-02 23:35:57,777: INFO: common: YAML file: schema.yaml loaded successfully]
+[2025-08-02 23:35:57,777: INFO: common: Created directory at: artifacts]
+[2025-08-02 23:35:57,782: INFO: common: Created directory at: artifacts/data_transformation]
+[2025-08-02 23:35:57,823: INFO: data_transformation: Train and test data saved at artifacts\data_transformation]
+[2025-08-02 23:35:57,823: INFO: data_transformation: Train data shape: (1199, 12), Test data shape: (400, 12)]
+[2025-08-02 23:35:57,823: INFO: main: >>>>>> stage Data Transformation Stage completed <<<<<<]
+[2025-08-02 23:35:57,823: INFO: main: >>>>>> stage Model Training Stage started <<<<<<]
+[2025-08-02 23:35:57,841: INFO: common: YAML file: config\config.yaml loaded successfully]
+[2025-08-02 23:35:57,842: INFO: common: YAML file: params.yaml loaded successfully]
+[2025-08-02 23:35:57,851: INFO: common: YAML file: schema.yaml loaded successfully]
+[2025-08-02 23:35:57,852: INFO: common: Created directory at: artifacts]
+[2025-08-02 23:35:57,853: INFO: common: Created directory at: artifacts/model_training]
+[2025-08-02 23:35:57,905: INFO: main: >>>>>> stage Model Training Stage completed <<<<<<]
+[2025-08-02 23:35:57,919: INFO: main: >>>>>> stage Model Evaluation Stage started <<<<<<]
+[2025-08-02 23:35:57,927: INFO: common: YAML file: config\config.yaml loaded successfully]
+[2025-08-02 23:35:57,930: INFO: common: YAML file: params.yaml loaded successfully]
+[2025-08-02 23:35:57,936: INFO: common: YAML file: schema.yaml loaded successfully]
+[2025-08-02 23:35:57,938: INFO: common: Created directory at: artifacts]
+[2025-08-02 23:35:57,943: INFO: common: Created directory at: artifacts/model_evaluation]
+[2025-08-02 23:35:58,653: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2025-08-02 23:35:58,669: INFO: helpers: Accessing as rajwaAth]
+[2025-08-02 23:35:59,436: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/repos/rajwaAth/MLOps-Project "HTTP/1.1 200 OK"]
+[2025-08-02 23:36:00,203: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2025-08-02 23:36:00,203: INFO: helpers: Initialized MLflow to track repo "rajwaAth/MLOps-Project"]
+[2025-08-02 23:36:00,203: INFO: helpers: Repository rajwaAth/MLOps-Project initialized!]
+[2025-08-02 23:36:00,260: INFO: common: JSON file saved at: artifacts\model_evaluation\metrics.json]
+[2025-08-02 23:36:22,640: INFO: main: >>>>>> stage Model Evaluation Stage completed <<<<<<]

@@ -1,15 +1,18 @@
-pandas
-mlflow==2.2.2
+mlflow
 notebook
-numpy
-scikit-learn
-matplotlib
-python-box==6.0.2
+python-box
 pyYAML
 tqdm
-typeguarg
+typeguard
 joblib
 types-PyYAML
 Flask
 Flask-Cors
+pandas
+numpy
+scikit-learn
+scipy
+matplotlib
+seaborn
+dagshub
 -e .

@@ -1,6 +1,6 @@
 from end_to_end_project.constants import *  # (CONFIG_FILE_PATH, PARAMS_FILE_PATH, SCHEMA_FILE_PATH)
 from end_to_end_project.utils.common import read_yaml, create_directories
-from end_to_end_project.entity.config_entity import DataIngestionConfig, DataValidationConfig, DataTransformationConfig, ModelTrainingConfig
+from end_to_end_project.entity.config_entity import DataIngestionConfig, DataValidationConfig, DataTransformationConfig, ModelTrainingConfig, ModelEvaluationConfig
 
 
 class ConfigurationManager:
@@ -78,3 +78,20 @@ class ConfigurationManager:
 
         return model_training_config
     
+    def get_model_evaluation_config(self) -> ModelEvaluationConfig:
+        config = self.config.model_evaluation
+        params = self.params.ElasticNet
+        schema = self.schema.TARGET_COLUMN
+
+        create_directories([config['root_dir']])
+
+        model_eval_config = ModelEvaluationConfig(
+            root_dir=config.root_dir,
+            data_test_path=config.data_test_path,
+            model_path=config.model_path,
+            metric_file=config.metric_file,
+            all_params=params,
+            target_col=schema.name
+        )
+
+        return model_eval_config
