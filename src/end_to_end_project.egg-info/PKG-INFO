@@ -1,0 +1,14 @@
+Metadata-Version: 2.4
+Name: end_to_end_project
+Version: 0.0.1
+Summary: A small package for end to end project (excercise) setup
+Author: mrath
+Author-email: rath@me.com
+Description-Content-Type: text/markdown
+Dynamic: author
+Dynamic: author-email
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: summary
+
+End to end project machine learning pipeline
