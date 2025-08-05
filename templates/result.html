@@ -299,6 +299,117 @@
                 margin: 0.5rem 0;
             }
         }
+
+        /* Print Styles for PDF Generation */
+        @media print {
+            body {
+                background: white !important;
+                color: black !important;
+                padding: 0 !important;
+                margin: 0 !important;
+            }
+            
+            .container {
+                max-width: 100% !important;
+                margin: 0 !important;
+                padding: 20px !important;
+            }
+            
+            .result-card {
+                background: white !important;
+                box-shadow: none !important;
+                border: 2px solid #333 !important;
+                border-radius: 0 !important;
+                margin: 0 !important;
+                page-break-inside: avoid;
+            }
+            
+            .result-header {
+                background: #f5f5f5 !important;
+                color: black !important;
+                border-bottom: 3px solid #333 !important;
+                page-break-after: avoid;
+            }
+            
+            .score-display {
+                color: #333 !important;
+                text-shadow: none !important;
+                font-size: 4rem !important;
+            }
+            
+            .quality-badge {
+                background: #e9e9e9 !important;
+                color: black !important;
+                border: 2px solid #333 !important;
+            }
+            
+            .action-buttons {
+                display: none !important;
+            }
+            
+            .stat-card, .parameter-group {
+                background: white !important;
+                border: 1px solid #333 !important;
+                page-break-inside: avoid;
+                margin-bottom: 10px !important;
+            }
+            
+            .parameter-value {
+                background: #f0f0f0 !important;
+                color: black !important;
+                border: 1px solid #ccc !important;
+            }
+            
+            .quality-meter {
+                background: #ddd !important;
+                border: 1px solid #333 !important;
+            }
+            
+            .quality-pointer {
+                background: black !important;
+                border: 2px solid black !important;
+            }
+            
+            .section-title {
+                page-break-after: avoid;
+                border-bottom: 1px solid #333 !important;
+                padding-bottom: 5px !important;
+            }
+            
+            .parameters-grid {
+                grid-template-columns: 1fr 1fr !important;
+                page-break-inside: avoid;
+                gap: 15px !important;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(4, 1fr) !important;
+                page-break-inside: avoid;
+                gap: 10px !important;
+            }
+            
+            /* Add print timestamp */
+            .result-header::after {
+                content: "Generated on " attr(data-timestamp);
+                position: absolute;
+                bottom: 10px;
+                right: 20px;
+                font-size: 0.7rem;
+                opacity: 0.8;
+                background: rgba(255,255,255,0.8);
+                padding: 2px 8px;
+                border-radius: 3px;
+            }
+            
+            /* Ensure good page breaks */
+            .content-section {
+                page-break-inside: avoid;
+            }
+            
+            h1, h2 {
+                page-break-after: avoid;
+            }
+        }
     </style>
 </head>
 <body>
@@ -335,15 +446,7 @@
                 {% endif %}
 
                 <div class="quality-meter">
-                    {% set pred_value = prediction | default(0) | float %}
-                    {% if pred_value < 3 %}
-                        {% set position = 0 %}
-                    {% elif pred_value > 9 %}
-                        {% set position = 100 %}
-                    {% else %}
-                        {% set position = ((pred_value - 3) / 6 * 100) | round(1) %}
-                    {% endif %}
-                    <div class="quality-pointer" style="left: {{ position }}%;"></div>
+                    <div class="quality-pointer" id="quality-pointer"></div>
                 </div>
                 <div style="display: flex; justify-content: space-between; font-size: 0.875rem; opacity: 0.8;">
                     <span>Poor (3)</span>
@@ -461,9 +564,13 @@
                         <i class="fas fa-plus" style="margin-right: 0.5rem;"></i>
                         New Prediction
                     </a>
-                    <a href="#" class="btn-secondary" onclick="downloadReport()">
-                        <i class="fas fa-download" style="margin-right: 0.5rem;"></i>
-                        Download Report
+                    <a href="#" class="btn-secondary" onclick="downloadPDF()">
+                        <i class="fas fa-file-pdf" style="margin-right: 0.5rem;"></i>
+                        Download PDF Report
+                    </a>
+                    <a href="#" class="btn-secondary" onclick="printReport()">
+                        <i class="fas fa-print" style="margin-right: 0.5rem;"></i>
+                        Print Report
                     </a>
                 </div>
             </div>
@@ -471,41 +578,108 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <script>
-        // Download report function
-        function downloadReport() {
+        // Set quality pointer position
+        document.addEventListener('DOMContentLoaded', function() {
+            const predValue = parseFloat('{{ prediction | default(0) }}') || 0;
+            let position = 0;
+            
+            if (predValue < 3) {
+                position = 0;
+            } else if (predValue > 9) {
+                position = 100;
+            } else {
+                position = ((predValue - 3) / 6 * 100);
+            }
+            
+            document.getElementById('quality-pointer').style.left = position + '%';
+        });
+
+        // Download PDF function
+        async function downloadPDF() {
             try {
-                const reportData = {
-                    prediction: parseFloat('{{ prediction | default("0") }}') || 0,
-                    timestamp: new Date().toISOString(),
-                    inputs: {
-                        fixed_acidity: parseFloat('{{ fixed_acidity | default("0") }}') || 0,
-                        volatile_acidity: parseFloat('{{ volatile_acidity | default("0") }}') || 0,
-                        citric_acid: parseFloat('{{ citric_acid | default("0") }}') || 0,
-                        residual_sugar: parseFloat('{{ residual_sugar | default("0") }}') || 0,
-                        chlorides: parseFloat('{{ chlorides | default("0") }}') || 0,
-                        free_sulfur_dioxide: parseFloat('{{ free_sulfur_dioxide | default("0") }}') || 0,
-                        total_sulfur_dioxide: parseFloat('{{ total_sulfur_dioxide | default("0") }}') || 0,
-                        density: parseFloat('{{ density | default("0") }}') || 0,
-                        pH: parseFloat('{{ pH | default("0") }}') || 0,
-                        sulphates: parseFloat('{{ sulphates | default("0") }}') || 0,
-                        alcohol: parseFloat('{{ alcohol | default("0") }}') || 0
-                    }
+                // Hide action buttons temporarily
+                const actionButtons = document.querySelector('.action-buttons');
+                actionButtons.style.display = 'none';
+                const header = document.querySelector('.result-header');
+                const timestamp = new Date().toLocaleString();
+                header.setAttribute('data-timestamp', timestamp);
+                
+                // Configure html2canvas options
+                const options = {
+                    scale: 2,
+                    useCORS: true,
+                    allowTaint: true,
+                    backgroundColor: '#ffffff',
+                    width: document.querySelector('.result-card').offsetWidth,
+                    height: document.querySelector('.result-card').offsetHeight,
                 };
                 
-                const dataStr = JSON.stringify(reportData, null, 2);
-                const dataUri = 'data:application/json;charset=utf-8,'+ encodeURIComponent(dataStr);
+                // Capture the content
+                const canvas = await html2canvas(document.querySelector('.result-card'), options);
                 
-                const exportFileDefaultName = 'wine_quality_report_' + new Date().toISOString().split('T')[0] + '.json';
+                // Create PDF
+                const { jsPDF } = window.jspdf;
+                const pdf = new jsPDF('p', 'mm', 'a4');
                 
-                const linkElement = document.createElement('a');
-                linkElement.setAttribute('href', dataUri);
-                linkElement.setAttribute('download', exportFileDefaultName);
-                linkElement.click();
+                // Calculate dimensions
+                const imgData = canvas.toDataURL('image/png');
+                const pdfWidth = pdf.internal.pageSize.getWidth();
+                const pdfHeight = pdf.internal.pageSize.getHeight();
+                const imgWidth = pdfWidth - 20; // 10mm margin on each side
+                const imgHeight = (canvas.height * imgWidth) / canvas.width;
+                
+                // Add title
+                pdf.setFontSize(20);
+                pdf.setTextColor(0, 0, 0);
+                pdf.text('Wine Quality Assessment Report', 105, 15, { align: 'center' });
+                
+                // Add image
+                let yPosition = 25;
+                if (imgHeight > pdfHeight - 30) {
+                    // Scale down if too tall
+                    const scale = (pdfHeight - 30) / imgHeight;
+                    pdf.addImage(imgData, 'PNG', 10, yPosition, imgWidth * scale, imgHeight * scale);
+                } else {
+                    pdf.addImage(imgData, 'PNG', 10, yPosition, imgWidth, imgHeight);
+                }
+                
+                // Add footer
+                pdf.setFontSize(8);
+                pdf.setTextColor(100, 100, 100);
+                pdf.text(`Generated on ${timestamp}`, 105, pdfHeight - 10, { align: 'center' });
+                
+                // Save PDF
+                const filename = `wine_quality_report_${new Date().toISOString().split('T')[0]}.pdf`;
+                pdf.save(filename);
+                
+                // Show action buttons again
+                actionButtons.style.display = 'block';
+                
             } catch (error) {
-                console.error('Error downloading report:', error);
-                alert('Error generating report. Please try again.');
+                console.error('Error generating PDF:', error);
+                alert('Error generating PDF. Please try the print option instead.');
+                
+                // Show action buttons again in case of error
+                document.querySelector('.action-buttons').style.display = 'block';
             }
+        }
+
+        // Print function
+        function printReport() {
+            // Add timestamp for print
+            const header = document.querySelector('.result-header');
+            const timestamp = new Date().toLocaleString();
+            header.setAttribute('data-timestamp', timestamp);
+            
+            window.print();
+        }
+
+        // Legacy function for backward compatibility
+        function downloadReport() {
+            downloadPDF();
         }
 
         // Animate elements on scroll

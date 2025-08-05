@@ -797,3 +797,13 @@ typeguard.TypeCheckError: the return value (str) is not an instance of int
 [2025-08-04 18:58:25,543: INFO: _internal: 127.0.0.1 - - [04/Aug/2025 18:58:25] "GET / HTTP/1.1" 200 -]
 [2025-08-04 18:58:29,296: INFO: _internal: 127.0.0.1 - - [04/Aug/2025 18:58:29] "POST /predict HTTP/1.1" 200 -]
 [2025-08-04 18:58:33,709: INFO: _internal: 127.0.0.1 - - [04/Aug/2025 18:58:33] "GET / HTTP/1.1" 200 -]
+[2025-08-05 16:39:28,086: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.18.31:8080]
+[2025-08-05 16:39:28,089: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2025-08-05 16:39:28,096: INFO: _internal:  * Restarting with stat]
+[2025-08-05 16:39:30,050: WARNING: _internal:  * Debugger is active!]
+[2025-08-05 16:39:30,065: INFO: _internal:  * Debugger PIN: 156-117-443]
+[2025-08-05 16:39:33,102: INFO: _internal: 127.0.0.1 - - [05/Aug/2025 16:39:33] "GET / HTTP/1.1" 200 -]
+[2025-08-05 16:39:43,141: INFO: _internal: 127.0.0.1 - - [05/Aug/2025 16:39:43] "POST /predict HTTP/1.1" 200 -]
