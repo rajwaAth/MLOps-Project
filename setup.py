@@ -5,7 +5,7 @@ with open("README.md", "r", encoding='utf-8') as f:
 
 __version__ = "0.0.1"
 
-REPO_NAME = "End_to_end_project"
+REPO_NAME = "end_to_end_project"
 AUTHOR_NAME = "mrath"
 SRC_REPO = "end_to_end_project"
 AUTHOR_EMAIL = "rath@me.com" # just an example

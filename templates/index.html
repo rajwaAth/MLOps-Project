@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wine Quality Predictor</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #6366f1;
+            --secondary-color: #8b5cf6;
+            --accent-color: #06b6d4;
+            --dark-color: #1f2937;
+            --light-color: #f8fafc;
+            --border-color: #e2e8f0;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: var(--dark-color);
+        }
+
+        .container-fluid {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1rem;
+        }
+
+        .main-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 24px;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            overflow: hidden;
+            max-width: 1000px;
+            width: 100%;
+        }
+
+        .header-section {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            padding: 3rem 2rem;
+            text-align: center;
+            color: white;
+        }
+
+        .header-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            opacity: 0.9;
+        }
+
+        .header-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.025em;
+        }
+
+        .header-subtitle {
+            font-size: 1.1rem;
+            font-weight: 400;
+            opacity: 0.9;
+        }
+
+        .form-section {
+            padding: 3rem 2rem;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .input-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .input-label {
+            display: block;
+            font-weight: 500;
+            color: var(--dark-color);
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 0.875rem 1rem;
+            border: 2px solid var(--border-color);
+            border-radius: 12px;
+            font-size: 1rem;
+            transition: all 0.2s ease;
+            background: white;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+        }
+
+        .form-input::placeholder {
+            color: #9ca3af;
+        }
+
+        .category-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--dark-color);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .submit-section {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border: none;
+            padding: 1rem 3rem;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow);
+            text-transform: uppercase;
+            letter-spacing: 0.025em;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+            background: linear-gradient(135deg, #5856eb, #7c3aed);
+        }
+
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+
+        .info-text {
+            font-size: 0.875rem;
+            color: #6b7280;
+            margin-top: 1rem;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .header-title {
+                font-size: 2rem;
+            }
+            
+            .form-section {
+                padding: 2rem 1.5rem;
+            }
+            
+            .form-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+        }
+
+        .loading-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .loading-spinner {
+            background: white;
+            padding: 2rem;
+            border-radius: 16px;
+            text-align: center;
+        }
+
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid var(--primary-color);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 1rem;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="main-card">
+            <!-- Header Section -->
+            <div class="header-section">
+                <div class="header-icon">
+                    <i class="fas fa-wine-glass-alt"></i>
+                </div>
+                <h1 class="header-title">Wine Quality Predictor</h1>
+                <p class="header-subtitle">AI-powered wine quality assessment based on chemical properties</p>
+            </div>
+
+            <!-- Form Section -->
+            <div class="form-section">
+                <form id="wineForm" action="/predict" method="POST">
+                    <div class="form-grid">
+                        <!-- Chemical Properties -->
+                        <div>
+                            <h3 class="category-title">
+                                <i class="fas fa-flask"></i>
+                                Chemical Properties
+                            </h3>
+                            
+                            <div class="input-group">
+                                <label class="input-label" for="fixed_acidity">Fixed Acidity (g/L)</label>
+                                <input type="number" 
+                                       class="form-input" 
+                                       id="fixed_acidity" 
+                                       name="fixed_acidity" 
+                                       step="0.1" 
+                                       placeholder="e.g., 7.4"
+                                       required>
+                            </div>
+
+                            <div class="input-group">
+                                <label class="input-label" for="volatile_acidity">Volatile Acidity (g/L)</label>
+                                <input type="number" 
+                                       class="form-input" 
+                                       id="volatile_acidity" 
+                                       name="volatile_acidity" 
+                                       step="0.01" 
+                                       placeholder="e.g., 0.7"
+                                       required>
+                            </div>
+
+                            <div class="input-group">
+                                <label class="input-label" for="citric_acid">Citric Acid (g/L)</label>
+                                <input type="number" 
+                                       class="form-input" 
+                                       id="citric_acid" 
+                                       name="citric_acid" 
+                                       step="0.01" 
+                                       placeholder="e.g., 0.0"
+                                       required>
+                            </div>
+
+                            <div class="input-group">
+                                <label class="input-label" for="residual_sugar">Residual Sugar (g/L)</label>
+                                <input type="number" 
+                                       class="form-input" 
+                                       id="residual_sugar" 
+                                       name="residual_sugar" 
+                                       step="0.1" 
+                                       placeholder="e.g., 1.9"
+                                       required>
+                            </div>
+
+                            <div class="input-group">
+                                <label class="input-label" for="chlorides">Chlorides (g/L)</label>
+                                <input type="number" 
+                                       class="form-input" 
+                                       id="chlorides" 
+                                       name="chlorides" 
+                                       step="0.001" 
+                                       placeholder="e.g., 0.076"
+                                       required>
+                            </div>
+
+                            <div class="input-group">
+                                <label class="input-label" for="sulphates">Sulphates (g/L)</label>
+                                <input type="number" 
+                                       class="form-input" 
+                                       id="sulphates" 
+                                       name="sulphates" 
+                                       step="0.01" 
+                                       placeholder="e.g., 0.56"
+                                       required>
+                            </div>
+                        </div>
+
+                        <!-- Physical Properties -->
+                        <div>
+                            <h3 class="category-title">
+                                <i class="fas fa-vial"></i>
+                                Physical Properties
+                            </h3>
+                            
+                            <div class="input-group">
+                                <label class="input-label" for="free_sulfur_dioxide">Free Sulfur Dioxide (mg/L)</label>
+                                <input type="number" 
+                                       class="form-input" 
+                                       id="free_sulfur_dioxide" 
+                                       name="free_sulfur_dioxide" 
+                                       step="1" 
+                                       placeholder="e.g., 11"
+                                       required>
+                            </div>
+
+                            <div class="input-group">
+                                <label class="input-label" for="total_sulfur_dioxide">Total Sulfur Dioxide (mg/L)</label>
+                                <input type="number" 
+                                       class="form-input" 
+                                       id="total_sulfur_dioxide" 
+                                       name="total_sulfur_dioxide" 
+                                       step="1" 
+                                       placeholder="e.g., 34"
+                                       required>
+                            </div>
+
+                            <div class="input-group">
+                                <label class="input-label" for="density">Density (g/cm³)</label>
+                                <input type="number" 
+                                       class="form-input" 
+                                       id="density" 
+                                       name="density" 
+                                       step="0.0001" 
+                                       placeholder="e.g., 0.9978"
+                                       required>
+                            </div>
+
+                            <div class="input-group">
+                                <label class="input-label" for="pH">pH Level</label>
+                                <input type="number" 
+                                       class="form-input" 
+                                       id="pH" 
+                                       name="pH" 
+                                       step="0.01" 
+                                       placeholder="e.g., 3.51"
+                                       required>
+                            </div>
+
+                            <div class="input-group">
+                                <label class="input-label" for="alcohol">Alcohol Content (% vol)</label>
+                                <input type="number" 
+                                       class="form-input" 
+                                       id="alcohol" 
+                                       name="alcohol" 
+                                       step="0.1" 
+                                       placeholder="e.g., 9.4"
+                                       required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="submit-section">
+                        <button type="submit" class="submit-btn">
+                            <i class="fas fa-magic" style="margin-right: 0.5rem;"></i>
+                            Predict Wine Quality
+                        </button>
+                        <p class="info-text">
+                            Our AI model analyzes 11 key parameters to predict wine quality on a scale of 3-9
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner">
+            <div class="spinner"></div>
+            <p>Analyzing wine properties...</p>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.getElementById('wineForm').addEventListener('submit', function(e) {
+            // Validate form before submission
+            const inputs = this.querySelectorAll('input[required]');
+            let isValid = true;
+            let invalidFields = [];
+            
+            inputs.forEach(input => {
+                const value = parseFloat(input.value);
+                const fieldName = input.getAttribute('name');
+                
+                // Check if field is empty
+                if (!input.value.trim()) {
+                    isValid = false;
+                    input.style.borderColor = '#ef4444';
+                    invalidFields.push(input.previousElementSibling.textContent);
+                    return;
+                }
+                
+                // Validate ranges for specific fields
+                if (fieldName === 'fixed_acidity' && (value < 4 || value > 16)) {
+                    isValid = false;
+                    input.style.borderColor = '#ef4444';
+                    invalidFields.push('Fixed Acidity (4-16 g/L)');
+                } else if (fieldName === 'volatile_acidity' && (value < 0.1 || value > 1.6)) {
+                    isValid = false;
+                    input.style.borderColor = '#ef4444';
+                    invalidFields.push('Volatile Acidity (0.1-1.6 g/L)');
+                } else if (fieldName === 'pH' && (value < 2.7 || value > 4.0)) {
+                    isValid = false;
+                    input.style.borderColor = '#ef4444';
+                    invalidFields.push('pH Level (2.7-4.0)');
+                } else if (fieldName === 'alcohol' && (value < 8 || value > 15)) {
+                    isValid = false;
+                    input.style.borderColor = '#ef4444';
+                    invalidFields.push('Alcohol Content (8-15%)');
+                } else {
+                    input.style.borderColor = '';
+                }
+            });
+            
+            if (!isValid) {
+                e.preventDefault();
+                if (invalidFields.length > 0) {
+                    alert('Please check the following fields:\\n' + invalidFields.join('\\n'));
+                } else {
+                    alert('Please fill in all required fields.');
+                }
+                return;
+            }
+            
+            // Show loading overlay
+            document.getElementById('loadingOverlay').style.display = 'flex';
+        });
+
+        // Add floating label effect
+        document.querySelectorAll('.form-input').forEach(input => {
+            input.addEventListener('focus', function() {
+                this.parentElement.style.transform = 'translateY(-2px)';
+                this.parentElement.style.transition = 'transform 0.2s ease';
+            });
+
+            input.addEventListener('blur', function() {
+                this.parentElement.style.transform = 'translateY(0)';
+            });
+            
+            // Reset border color on input
+            input.addEventListener('input', function() {
+                this.style.borderColor = '';
+            });
+        });
+
+        // Sample data button
+        function getRandom(min, max, decimalPlaces = 1) {
+            const rand = Math.random() * (max - min) + min;
+            return rand.toFixed(decimalPlaces);
+        }
+
+        function fillSampleData() {
+            document.getElementById('fixed_acidity').value = getRandom(4.0, 15.0);
+            document.getElementById('volatile_acidity').value = getRandom(0.1, 1.5);
+            document.getElementById('citric_acid').value = getRandom(0.0, 1.0);
+            document.getElementById('residual_sugar').value = getRandom(0.5, 15.0);
+            document.getElementById('chlorides').value = getRandom(0.01, 0.2);
+            document.getElementById('free_sulfur_dioxide').value = getRandom(1, 70, 0); // bilangan bulat
+            document.getElementById('total_sulfur_dioxide').value = getRandom(6, 200, 0);
+            document.getElementById('density').value = getRandom(0.9900, 1.0050, 4);
+            document.getElementById('pH').value = getRandom(2.8, 4.0);
+            document.getElementById('sulphates').value = getRandom(0.3, 2.0);
+            document.getElementById('alcohol').value = getRandom(8.0, 14.9);
+        }
+
+        // Add sample data button with better styling
+        document.querySelector('.submit-section').insertAdjacentHTML('afterbegin', 
+            '<button type="button" onclick="fillSampleData()" style="background: transparent; border: 2px solid var(--primary-color); color: var(--primary-color); padding: 0.75rem 2rem; border-radius: 50px; font-weight: 500; margin-right: 1rem; margin-bottom: 1rem; cursor: pointer; transition: all 0.2s ease; display: inline-block;" onmouseover="this.style.background=\'var(--primary-color)\'; this.style.color=\'white\';" onmouseout="this.style.background=\'transparent\'; this.style.color=\'var(--primary-color)\';">Fill Sample Data</button>'
+        );
+
+        // Add form reset functionality
+        function resetForm() {
+            document.getElementById('wineForm').reset();
+            document.querySelectorAll('.form-input').forEach(input => {
+                input.style.borderColor = '';
+            });
+        }
+
+        // Add reset button
+        document.querySelector('.submit-section').insertAdjacentHTML('afterbegin', 
+            '<button type="button" onclick="resetForm()" style="background: transparent; border: 2px solid var(--error-color, #ef4444); color: var(--error-color, #ef4444); padding: 0.75rem 2rem; border-radius: 50px; font-weight: 500; margin-right: 1rem; margin-bottom: 1rem; cursor: pointer; transition: all 0.2s ease; display: inline-block;" onmouseover="this.style.background=\'var(--error-color, #ef4444)\'; this.style.color=\'white\';" onmouseout="this.style.background=\'transparent\'; this.style.color=\'var(--error-color, #ef4444)\';">Reset Form</button>'
+        );
+    </script>
+</body>
+</html>
