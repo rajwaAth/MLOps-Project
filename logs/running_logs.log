@@ -807,3 +807,661 @@ typeguard.TypeCheckError: the return value (str) is not an instance of int
 [2025-08-05 16:39:30,065: INFO: _internal:  * Debugger PIN: 156-117-443]
 [2025-08-05 16:39:33,102: INFO: _internal: 127.0.0.1 - - [05/Aug/2025 16:39:33] "GET / HTTP/1.1" 200 -]
 [2025-08-05 16:39:43,141: INFO: _internal: 127.0.0.1 - - [05/Aug/2025 16:39:43] "POST /predict HTTP/1.1" 200 -]
+[2025-08-08 17:13:17,056: INFO: main: >>>>>> stage Data Ingestion Stage started <<<<<<]
+[2025-08-08 17:13:17,072: INFO: common: YAML file: config\config.yaml loaded successfully]
+[2025-08-08 17:13:17,090: INFO: common: YAML file: params.yaml loaded successfully]
+[2025-08-08 17:13:17,113: INFO: common: YAML file: schema.yaml loaded successfully]
+[2025-08-08 17:13:17,115: INFO: common: Created directory at: artifacts]
+[2025-08-08 17:13:17,116: INFO: common: Created directory at: artifacts/data_ingestion]
+[2025-08-08 17:13:17,117: INFO: data_ingestion: File already exists of size: 22.7822265625 KB]
+[2025-08-08 17:13:17,159: INFO: data_ingestion: Extracted zip file to : artifacts/data_ingestion]
+[2025-08-08 17:13:17,162: INFO: main: >>>>>> stage Data Ingestion Stage completed <<<<<<]
+[2025-08-08 17:13:17,162: INFO: main: >>>>>> stage Data Validation Stage started <<<<<<]
+[2025-08-08 17:13:17,165: INFO: common: YAML file: config\config.yaml loaded successfully]
+[2025-08-08 17:13:17,170: INFO: common: YAML file: params.yaml loaded successfully]
+[2025-08-08 17:13:17,176: INFO: common: YAML file: schema.yaml loaded successfully]
+[2025-08-08 17:13:17,177: INFO: common: Created directory at: artifacts]
+[2025-08-08 17:13:17,180: INFO: common: Created directory at: artifacts/data_validation]
+[2025-08-08 17:13:17,226: INFO: main: >>>>>> stage Data Validation Stage completed <<<<<<]
+[2025-08-08 17:13:17,229: INFO: main: >>>>>> stage Data Transformation Stage started <<<<<<]
+[2025-08-08 17:13:17,235: INFO: common: YAML file: config\config.yaml loaded successfully]
+[2025-08-08 17:13:17,246: INFO: common: YAML file: params.yaml loaded successfully]
+[2025-08-08 17:13:17,248: INFO: common: YAML file: schema.yaml loaded successfully]
+[2025-08-08 17:13:17,252: INFO: common: Created directory at: artifacts]
+[2025-08-08 17:13:17,256: INFO: common: Created directory at: artifacts/data_transformation]
+[2025-08-08 17:13:17,258: ERROR: main: DataTransformation.__init__() missing 1 required positional argument: 'df']
+Traceback (most recent call last):
+  File "c:\Users\admin\OneDrive\Dokumen\Portofolio\Data Sceince (Python)\End-to-end\main.py", line 33, in <module>
+    obj.main()
+  File "c:\users\admin\onedrive\dokumen\portofolio\data sceince (python)\end-to-end\src\end_to_end_project\pipeline\stage_03_data_transformation.py", line 15, in main
+    data_transformation = DataTransformation(config=data_transformation_config)
+TypeError: DataTransformation.__init__() missing 1 required positional argument: 'df'
+[2025-08-08 17:15:33,836: INFO: main: >>>>>> stage Data Ingestion Stage started <<<<<<]
+[2025-08-08 17:15:33,838: INFO: common: YAML file: config\config.yaml loaded successfully]
+[2025-08-08 17:15:33,840: INFO: common: YAML file: params.yaml loaded successfully]
+[2025-08-08 17:15:33,844: INFO: common: YAML file: schema.yaml loaded successfully]
+[2025-08-08 17:15:33,845: INFO: common: Created directory at: artifacts]
+[2025-08-08 17:15:33,847: INFO: common: Created directory at: artifacts/data_ingestion]
+[2025-08-08 17:15:33,848: INFO: data_ingestion: File already exists of size: 22.7822265625 KB]
+[2025-08-08 17:15:33,851: INFO: data_ingestion: Extracted zip file to : artifacts/data_ingestion]
+[2025-08-08 17:15:33,851: INFO: main: >>>>>> stage Data Ingestion Stage completed <<<<<<]
+[2025-08-08 17:15:33,855: INFO: main: >>>>>> stage Data Validation Stage started <<<<<<]
+[2025-08-08 17:15:33,861: INFO: common: YAML file: config\config.yaml loaded successfully]
+[2025-08-08 17:15:33,863: INFO: common: YAML file: params.yaml loaded successfully]
+[2025-08-08 17:15:33,869: INFO: common: YAML file: schema.yaml loaded successfully]
+[2025-08-08 17:15:33,870: INFO: common: Created directory at: artifacts]
+[2025-08-08 17:15:33,875: INFO: common: Created directory at: artifacts/data_validation]
+[2025-08-08 17:15:33,916: INFO: main: >>>>>> stage Data Validation Stage completed <<<<<<]
+[2025-08-08 17:15:33,917: INFO: main: >>>>>> stage Data Transformation Stage started <<<<<<]
+[2025-08-08 17:15:33,926: INFO: common: YAML file: config\config.yaml loaded successfully]
+[2025-08-08 17:15:33,930: INFO: common: YAML file: params.yaml loaded successfully]
+[2025-08-08 17:15:33,933: INFO: common: YAML file: schema.yaml loaded successfully]
+[2025-08-08 17:15:33,934: INFO: common: Created directory at: artifacts]
+[2025-08-08 17:15:33,935: INFO: common: Created directory at: artifacts/data_transformation]
+[2025-08-08 17:15:33,935: ERROR: main: DataTransformation.__init__() missing 1 required positional argument: 'df']
+Traceback (most recent call last):
+  File "c:\Users\admin\OneDrive\Dokumen\Portofolio\Data Sceince (Python)\End-to-end\main.py", line 33, in <module>
+    obj.main()
+  File "c:\users\admin\onedrive\dokumen\portofolio\data sceince (python)\end-to-end\src\end_to_end_project\pipeline\stage_03_data_transformation.py", line 15, in main
+    data_transformation = DataTransformation(config=data_transformation_config)
+TypeError: DataTransformation.__init__() missing 1 required positional argument: 'df'
+[2025-08-08 17:19:46,932: INFO: stage_03_data_transformation: >>>>>> stage Data Transformation started <<<<<<]
+[2025-08-08 17:19:46,935: INFO: common: YAML file: config\config.yaml loaded successfully]
+[2025-08-08 17:19:46,935: INFO: common: YAML file: params.yaml loaded successfully]
+[2025-08-08 17:19:46,947: INFO: common: YAML file: schema.yaml loaded successfully]
+[2025-08-08 17:19:46,947: INFO: common: Created directory at: artifacts]
+[2025-08-08 17:19:46,953: INFO: common: Created directory at: artifacts/data_transformation]
+[2025-08-08 17:19:47,024: INFO: data_transformation: Cleaned data shape: (1359, 12)]
+[2025-08-08 17:19:47,110: ERROR: stage_03_data_transformation: at least one array or dtype is required]
+Traceback (most recent call last):
+  File "c:\Users\admin\OneDrive\Dokumen\Portofolio\Data Sceince (Python)\End-to-end\src\end_to_end_project\pipeline\stage_03_data_transformation.py", line 22, in <module>
+    obj.main()
+  File "c:\Users\admin\OneDrive\Dokumen\Portofolio\Data Sceince (Python)\End-to-end\src\end_to_end_project\pipeline\stage_03_data_transformation.py", line 16, in main
+    data_transformation.run_data_transformation()
+  File "c:\users\admin\onedrive\dokumen\portofolio\data sceince (python)\end-to-end\src\end_to_end_project\components\data_transformation.py", line 75, in run_data_transformation
+    train, test = self.handle_skewness_normalize(train, test)
+  File "c:\users\admin\onedrive\dokumen\portofolio\data sceince (python)\end-to-end\src\end_to_end_project\components\data_transformation.py", line 48, in handle_skewness_normalize
+    train[skewed_cols] = pt.fit_transform(train[skewed_cols])
+  File "C:\Users\admin\anaconda3\envs\n2nProject\lib\site-packages\sklearn\utils\_set_output.py", line 319, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+  File "C:\Users\admin\anaconda3\envs\n2nProject\lib\site-packages\sklearn\base.py", line 1389, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "C:\Users\admin\anaconda3\envs\n2nProject\lib\site-packages\sklearn\preprocessing\_data.py", line 3320, in fit_transform
+    return self._fit(X, y, force_transform=True)
+  File "C:\Users\admin\anaconda3\envs\n2nProject\lib\site-packages\sklearn\preprocessing\_data.py", line 3323, in _fit
+    X = self._check_input(X, in_fit=True, check_positive=True)
+  File "C:\Users\admin\anaconda3\envs\n2nProject\lib\site-packages\sklearn\preprocessing\_data.py", line 3550, in _check_input
+    X = validate_data(
+  File "C:\Users\admin\anaconda3\envs\n2nProject\lib\site-packages\sklearn\utils\validation.py", line 2944, in validate_data
+    out = check_array(X, input_name="X", **check_params)
+  File "C:\Users\admin\anaconda3\envs\n2nProject\lib\site-packages\sklearn\utils\validation.py", line 931, in check_array
+    dtype_orig = np.result_type(*dtypes_orig)
+ValueError: at least one array or dtype is required
+[2025-08-08 17:20:35,494: INFO: main: >>>>>> stage Data Ingestion Stage started <<<<<<]
+[2025-08-08 17:20:35,496: INFO: common: YAML file: config\config.yaml loaded successfully]
+[2025-08-08 17:20:35,496: INFO: common: YAML file: params.yaml loaded successfully]
+[2025-08-08 17:20:35,502: INFO: common: YAML file: schema.yaml loaded successfully]
+[2025-08-08 17:20:35,503: INFO: common: Created directory at: artifacts]
+[2025-08-08 17:20:35,504: INFO: common: Created directory at: artifacts/data_ingestion]
+[2025-08-08 17:20:35,505: INFO: data_ingestion: File already exists of size: 22.7822265625 KB]
+[2025-08-08 17:20:35,508: INFO: data_ingestion: Extracted zip file to : artifacts/data_ingestion]
+[2025-08-08 17:20:35,508: INFO: main: >>>>>> stage Data Ingestion Stage completed <<<<<<]
+[2025-08-08 17:20:35,508: INFO: main: >>>>>> stage Data Validation Stage started <<<<<<]
+[2025-08-08 17:20:35,516: INFO: common: YAML file: config\config.yaml loaded successfully]
+[2025-08-08 17:20:35,518: INFO: common: YAML file: params.yaml loaded successfully]
+[2025-08-08 17:20:35,521: INFO: common: YAML file: schema.yaml loaded successfully]
+[2025-08-08 17:20:35,522: INFO: common: Created directory at: artifacts]
+[2025-08-08 17:20:35,522: INFO: common: Created directory at: artifacts/data_validation]
+[2025-08-08 17:20:35,559: INFO: main: >>>>>> stage Data Validation Stage completed <<<<<<]
+[2025-08-08 17:20:35,560: INFO: main: >>>>>> stage Data Transformation Stage started <<<<<<]
+[2025-08-08 17:20:35,565: INFO: common: YAML file: config\config.yaml loaded successfully]
+[2025-08-08 17:20:35,567: INFO: common: YAML file: params.yaml loaded successfully]
+[2025-08-08 17:20:35,569: INFO: common: YAML file: schema.yaml loaded successfully]
+[2025-08-08 17:20:35,570: INFO: common: Created directory at: artifacts]
+[2025-08-08 17:20:35,570: INFO: common: Created directory at: artifacts/data_transformation]
+[2025-08-08 17:20:35,579: INFO: data_transformation: Cleaned data shape: (1359, 12)]
+[2025-08-08 17:20:35,621: ERROR: main: at least one array or dtype is required]
+Traceback (most recent call last):
+  File "c:\Users\admin\OneDrive\Dokumen\Portofolio\Data Sceince (Python)\End-to-end\main.py", line 33, in <module>
+    obj.main()
+  File "c:\users\admin\onedrive\dokumen\portofolio\data sceince (python)\end-to-end\src\end_to_end_project\pipeline\stage_03_data_transformation.py", line 16, in main
+    data_transformation.run_data_transformation()
+  File "c:\users\admin\onedrive\dokumen\portofolio\data sceince (python)\end-to-end\src\end_to_end_project\components\data_transformation.py", line 75, in run_data_transformation
+    train, test = self.handle_skewness_normalize(train, test)
+  File "c:\users\admin\onedrive\dokumen\portofolio\data sceince (python)\end-to-end\src\end_to_end_project\components\data_transformation.py", line 48, in handle_skewness_normalize
+    train[skewed_cols] = pt.fit_transform(train[skewed_cols])
+  File "C:\Users\admin\anaconda3\envs\n2nProject\lib\site-packages\sklearn\utils\_set_output.py", line 319, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+  File "C:\Users\admin\anaconda3\envs\n2nProject\lib\site-packages\sklearn\base.py", line 1389, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "C:\Users\admin\anaconda3\envs\n2nProject\lib\site-packages\sklearn\preprocessing\_data.py", line 3320, in fit_transform
+    return self._fit(X, y, force_transform=True)
+  File "C:\Users\admin\anaconda3\envs\n2nProject\lib\site-packages\sklearn\preprocessing\_data.py", line 3323, in _fit
+    X = self._check_input(X, in_fit=True, check_positive=True)
+  File "C:\Users\admin\anaconda3\envs\n2nProject\lib\site-packages\sklearn\preprocessing\_data.py", line 3550, in _check_input
+    X = validate_data(
+  File "C:\Users\admin\anaconda3\envs\n2nProject\lib\site-packages\sklearn\utils\validation.py", line 2944, in validate_data
+    out = check_array(X, input_name="X", **check_params)
+  File "C:\Users\admin\anaconda3\envs\n2nProject\lib\site-packages\sklearn\utils\validation.py", line 931, in check_array
+    dtype_orig = np.result_type(*dtypes_orig)
+ValueError: at least one array or dtype is required
+[2025-08-08 17:27:58,759: INFO: main: >>>>>> stage Data Ingestion Stage started <<<<<<]
+[2025-08-08 17:27:58,765: INFO: common: YAML file: config\config.yaml loaded successfully]
+[2025-08-08 17:27:58,767: INFO: common: YAML file: params.yaml loaded successfully]
+[2025-08-08 17:27:58,770: INFO: common: YAML file: schema.yaml loaded successfully]
+[2025-08-08 17:27:58,771: INFO: common: Created directory at: artifacts]
+[2025-08-08 17:27:58,771: INFO: common: Created directory at: artifacts/data_ingestion]
+[2025-08-08 17:27:58,772: INFO: data_ingestion: File already exists of size: 22.7822265625 KB]
+[2025-08-08 17:27:58,776: INFO: data_ingestion: Extracted zip file to : artifacts/data_ingestion]
+[2025-08-08 17:27:58,776: INFO: main: >>>>>> stage Data Ingestion Stage completed <<<<<<]
+[2025-08-08 17:27:58,777: INFO: main: >>>>>> stage Data Validation Stage started <<<<<<]
+[2025-08-08 17:27:58,786: INFO: common: YAML file: config\config.yaml loaded successfully]
+[2025-08-08 17:27:58,787: INFO: common: YAML file: params.yaml loaded successfully]
+[2025-08-08 17:27:58,795: INFO: common: YAML file: schema.yaml loaded successfully]
+[2025-08-08 17:27:58,796: INFO: common: Created directory at: artifacts]
+[2025-08-08 17:27:58,796: INFO: common: Created directory at: artifacts/data_validation]
+[2025-08-08 17:27:58,830: INFO: main: >>>>>> stage Data Validation Stage completed <<<<<<]
+[2025-08-08 17:27:58,831: INFO: main: >>>>>> stage Data Transformation Stage started <<<<<<]
+[2025-08-08 17:27:58,843: INFO: common: YAML file: config\config.yaml loaded successfully]
+[2025-08-08 17:27:58,845: INFO: common: YAML file: params.yaml loaded successfully]
+[2025-08-08 17:27:58,849: INFO: common: YAML file: schema.yaml loaded successfully]
+[2025-08-08 17:27:58,849: INFO: common: Created directory at: artifacts]
+[2025-08-08 17:27:58,850: INFO: common: Created directory at: artifacts/data_transformation]
+[2025-08-08 17:27:58,860: INFO: data_transformation: Cleaned data shape: (1359, 12)]
+[2025-08-08 17:27:58,890: INFO: data_transformation: No skewed columns found, skipping normalization.]
+[2025-08-08 17:27:58,912: ERROR: main: Expected n_neighbors <= n_samples_fit, but n_neighbors = 6, n_samples_fit = 2, n_samples = 2]
+Traceback (most recent call last):
+  File "C:\Users\admin\OneDrive\Dokumen\Portofolio\Data Sceince (Python)\End-to-end\main.py", line 33, in <module>
+    obj.main()
+  File "c:\users\admin\onedrive\dokumen\portofolio\data sceince (python)\end-to-end\src\end_to_end_project\pipeline\stage_03_data_transformation.py", line 16, in main
+    data_transformation.run_data_transformation()
+  File "c:\users\admin\onedrive\dokumen\portofolio\data sceince (python)\end-to-end\src\end_to_end_project\components\data_transformation.py", line 80, in run_data_transformation
+    train = self.handle_imbalenced(train)
+  File "c:\users\admin\onedrive\dokumen\portofolio\data sceince (python)\end-to-end\src\end_to_end_project\components\data_transformation.py", line 61, in handle_imbalenced
+    X_resampled, y_resampled = smote.fit_resample(X, y)
+  File "C:\Users\admin\anaconda3\envs\n2nProject\lib\site-packages\imblearn\base.py", line 202, in fit_resample
+    return super().fit_resample(X, y, **params)
+  File "C:\Users\admin\anaconda3\envs\n2nProject\lib\site-packages\sklearn\base.py", line 1389, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "C:\Users\admin\anaconda3\envs\n2nProject\lib\site-packages\imblearn\base.py", line 105, in fit_resample
+    output = self._fit_resample(X, y, **params)
+  File "C:\Users\admin\anaconda3\envs\n2nProject\lib\site-packages\imblearn\over_sampling\_smote\base.py", line 359, in _fit_resample
+    nns = self.nn_k_.kneighbors(X_class, return_distance=False)[:, 1:]
+  File "C:\Users\admin\anaconda3\envs\n2nProject\lib\site-packages\sklearn\neighbors\_base.py", line 854, in kneighbors
+    raise ValueError(
+ValueError: Expected n_neighbors <= n_samples_fit, but n_neighbors = 6, n_samples_fit = 2, n_samples = 2
+[2025-08-08 17:32:54,295: INFO: main: >>>>>> stage Data Ingestion Stage started <<<<<<]
+[2025-08-08 17:32:54,300: INFO: common: YAML file: config\config.yaml loaded successfully]
+[2025-08-08 17:32:54,302: INFO: common: YAML file: params.yaml loaded successfully]
+[2025-08-08 17:32:54,310: INFO: common: YAML file: schema.yaml loaded successfully]
+[2025-08-08 17:32:54,312: INFO: common: Created directory at: artifacts]
+[2025-08-08 17:32:54,312: INFO: common: Created directory at: artifacts/data_ingestion]
+[2025-08-08 17:32:54,313: INFO: data_ingestion: File already exists of size: 22.7822265625 KB]
+[2025-08-08 17:32:54,317: INFO: data_ingestion: Extracted zip file to : artifacts/data_ingestion]
+[2025-08-08 17:32:54,319: INFO: main: >>>>>> stage Data Ingestion Stage completed <<<<<<]
+[2025-08-08 17:32:54,320: INFO: main: >>>>>> stage Data Validation Stage started <<<<<<]
+[2025-08-08 17:32:54,326: INFO: common: YAML file: config\config.yaml loaded successfully]
+[2025-08-08 17:32:54,328: INFO: common: YAML file: params.yaml loaded successfully]
+[2025-08-08 17:32:54,337: INFO: common: YAML file: schema.yaml loaded successfully]
+[2025-08-08 17:32:54,338: INFO: common: Created directory at: artifacts]
+[2025-08-08 17:32:54,339: INFO: common: Created directory at: artifacts/data_validation]
+[2025-08-08 17:32:54,379: INFO: main: >>>>>> stage Data Validation Stage completed <<<<<<]
+[2025-08-08 17:32:54,379: INFO: main: >>>>>> stage Data Transformation Stage started <<<<<<]
+[2025-08-08 17:32:54,386: INFO: common: YAML file: config\config.yaml loaded successfully]
+[2025-08-08 17:32:54,389: INFO: common: YAML file: params.yaml loaded successfully]
+[2025-08-08 17:32:54,392: INFO: common: YAML file: schema.yaml loaded successfully]
+[2025-08-08 17:32:54,393: INFO: common: Created directory at: artifacts]
+[2025-08-08 17:32:54,394: INFO: common: Created directory at: artifacts/data_transformation]
+[2025-08-08 17:32:54,404: INFO: data_transformation: Cleaned data shape: (1359, 12)]
+[2025-08-08 17:32:54,428: INFO: data_transformation: No skewed columns found, skipping normalization.]
+[2025-08-08 17:32:54,453: INFO: data_transformation: Minimum sample in any class: 2]
+[2025-08-08 17:32:54,457: ERROR: main: Expected n_neighbors <= n_samples_fit, but n_neighbors = 6, n_samples_fit = 2, n_samples = 2]
+Traceback (most recent call last):
+  File "C:\Users\admin\OneDrive\Dokumen\Portofolio\Data Sceince (Python)\End-to-end\main.py", line 33, in <module>
+    obj.main()
+  File "c:\users\admin\onedrive\dokumen\portofolio\data sceince (python)\end-to-end\src\end_to_end_project\pipeline\stage_03_data_transformation.py", line 16, in main
+    data_transformation.run_data_transformation()
+  File "c:\users\admin\onedrive\dokumen\portofolio\data sceince (python)\end-to-end\src\end_to_end_project\components\data_transformation.py", line 85, in run_data_transformation
+    train = self.handle_imbalenced(train)
+  File "c:\users\admin\onedrive\dokumen\portofolio\data sceince (python)\end-to-end\src\end_to_end_project\components\data_transformation.py", line 66, in handle_imbalenced
+    X_resampled, y_resampled = smote.fit_resample(X, y)
+  File "C:\Users\admin\anaconda3\envs\n2nProject\lib\site-packages\imblearn\base.py", line 202, in fit_resample
+    return super().fit_resample(X, y, **params)
+  File "C:\Users\admin\anaconda3\envs\n2nProject\lib\site-packages\sklearn\base.py", line 1389, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "C:\Users\admin\anaconda3\envs\n2nProject\lib\site-packages\imblearn\base.py", line 105, in fit_resample
+    output = self._fit_resample(X, y, **params)
+  File "C:\Users\admin\anaconda3\envs\n2nProject\lib\site-packages\imblearn\over_sampling\_smote\base.py", line 359, in _fit_resample
+    nns = self.nn_k_.kneighbors(X_class, return_distance=False)[:, 1:]
+  File "C:\Users\admin\anaconda3\envs\n2nProject\lib\site-packages\sklearn\neighbors\_base.py", line 854, in kneighbors
+    raise ValueError(
+ValueError: Expected n_neighbors <= n_samples_fit, but n_neighbors = 6, n_samples_fit = 2, n_samples = 2
+[2025-08-08 17:34:59,558: INFO: main: >>>>>> stage Data Ingestion Stage started <<<<<<]
+[2025-08-08 17:34:59,561: INFO: common: YAML file: config\config.yaml loaded successfully]
+[2025-08-08 17:34:59,563: INFO: common: YAML file: params.yaml loaded successfully]
+[2025-08-08 17:34:59,567: INFO: common: YAML file: schema.yaml loaded successfully]
+[2025-08-08 17:34:59,568: INFO: common: Created directory at: artifacts]
+[2025-08-08 17:34:59,568: INFO: common: Created directory at: artifacts/data_ingestion]
+[2025-08-08 17:34:59,569: INFO: data_ingestion: File already exists of size: 22.7822265625 KB]
+[2025-08-08 17:34:59,572: INFO: data_ingestion: Extracted zip file to : artifacts/data_ingestion]
+[2025-08-08 17:34:59,573: INFO: main: >>>>>> stage Data Ingestion Stage completed <<<<<<]
+[2025-08-08 17:34:59,574: INFO: main: >>>>>> stage Data Validation Stage started <<<<<<]
+[2025-08-08 17:34:59,580: INFO: common: YAML file: config\config.yaml loaded successfully]
+[2025-08-08 17:34:59,582: INFO: common: YAML file: params.yaml loaded successfully]
+[2025-08-08 17:34:59,586: INFO: common: YAML file: schema.yaml loaded successfully]
+[2025-08-08 17:34:59,587: INFO: common: Created directory at: artifacts]
+[2025-08-08 17:34:59,587: INFO: common: Created directory at: artifacts/data_validation]
+[2025-08-08 17:34:59,619: INFO: main: >>>>>> stage Data Validation Stage completed <<<<<<]
+[2025-08-08 17:34:59,620: INFO: main: >>>>>> stage Data Transformation Stage started <<<<<<]
+[2025-08-08 17:34:59,628: INFO: common: YAML file: config\config.yaml loaded successfully]
+[2025-08-08 17:34:59,629: INFO: common: YAML file: params.yaml loaded successfully]
+[2025-08-08 17:34:59,635: INFO: common: YAML file: schema.yaml loaded successfully]
+[2025-08-08 17:34:59,636: INFO: common: Created directory at: artifacts]
+[2025-08-08 17:34:59,637: INFO: common: Created directory at: artifacts/data_transformation]
+[2025-08-08 17:34:59,644: INFO: data_transformation: Cleaned data shape: (1359, 12)]
+[2025-08-08 17:34:59,686: INFO: data_transformation: No skewed columns found, skipping normalization.]
+[2025-08-08 17:34:59,688: INFO: data_transformation: Minimum sample in any class: 2]
+[2025-08-08 17:34:59,693: ERROR: main: SMOTE._fit_resample() got an unexpected keyword argument 'k_neighbors']
+Traceback (most recent call last):
+  File "C:\Users\admin\OneDrive\Dokumen\Portofolio\Data Sceince (Python)\End-to-end\main.py", line 33, in <module>
+    obj.main()
+  File "c:\users\admin\onedrive\dokumen\portofolio\data sceince (python)\end-to-end\src\end_to_end_project\pipeline\stage_03_data_transformation.py", line 16, in main
+    data_transformation.run_data_transformation()
+  File "c:\users\admin\onedrive\dokumen\portofolio\data sceince (python)\end-to-end\src\end_to_end_project\components\data_transformation.py", line 85, in run_data_transformation
+    train = self.handle_imbalenced(train)
+  File "c:\users\admin\onedrive\dokumen\portofolio\data sceince (python)\end-to-end\src\end_to_end_project\components\data_transformation.py", line 66, in handle_imbalenced
+    X_resampled, y_resampled = smote.fit_resample(X, y, k_neighbors=min_samples)
+  File "C:\Users\admin\anaconda3\envs\n2nProject\lib\site-packages\imblearn\base.py", line 202, in fit_resample
+    return super().fit_resample(X, y, **params)
+  File "C:\Users\admin\anaconda3\envs\n2nProject\lib\site-packages\sklearn\base.py", line 1389, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "C:\Users\admin\anaconda3\envs\n2nProject\lib\site-packages\imblearn\base.py", line 105, in fit_resample
+    output = self._fit_resample(X, y, **params)
+TypeError: SMOTE._fit_resample() got an unexpected keyword argument 'k_neighbors'
+[2025-08-08 17:37:18,969: INFO: main: >>>>>> stage Data Ingestion Stage started <<<<<<]
+[2025-08-08 17:37:18,972: INFO: common: YAML file: config\config.yaml loaded successfully]
+[2025-08-08 17:37:18,975: INFO: common: YAML file: params.yaml loaded successfully]
+[2025-08-08 17:37:18,978: INFO: common: YAML file: schema.yaml loaded successfully]
+[2025-08-08 17:37:18,979: INFO: common: Created directory at: artifacts]
+[2025-08-08 17:37:18,980: INFO: common: Created directory at: artifacts/data_ingestion]
+[2025-08-08 17:37:18,981: INFO: data_ingestion: File already exists of size: 22.7822265625 KB]
+[2025-08-08 17:37:18,986: INFO: data_ingestion: Extracted zip file to : artifacts/data_ingestion]
+[2025-08-08 17:37:18,987: INFO: main: >>>>>> stage Data Ingestion Stage completed <<<<<<]
+[2025-08-08 17:37:18,988: INFO: main: >>>>>> stage Data Validation Stage started <<<<<<]
+[2025-08-08 17:37:18,995: INFO: common: YAML file: config\config.yaml loaded successfully]
+[2025-08-08 17:37:18,998: INFO: common: YAML file: params.yaml loaded successfully]
+[2025-08-08 17:37:19,001: INFO: common: YAML file: schema.yaml loaded successfully]
+[2025-08-08 17:37:19,006: INFO: common: Created directory at: artifacts]
+[2025-08-08 17:37:19,008: INFO: common: Created directory at: artifacts/data_validation]
+[2025-08-08 17:37:19,039: INFO: main: >>>>>> stage Data Validation Stage completed <<<<<<]
+[2025-08-08 17:37:19,040: INFO: main: >>>>>> stage Data Transformation Stage started <<<<<<]
+[2025-08-08 17:37:19,044: INFO: common: YAML file: config\config.yaml loaded successfully]
+[2025-08-08 17:37:19,048: INFO: common: YAML file: params.yaml loaded successfully]
+[2025-08-08 17:37:19,051: INFO: common: YAML file: schema.yaml loaded successfully]
+[2025-08-08 17:37:19,052: INFO: common: Created directory at: artifacts]
+[2025-08-08 17:37:19,053: INFO: common: Created directory at: artifacts/data_transformation]
+[2025-08-08 17:37:19,057: INFO: data_transformation: Cleaned data shape: (1359, 12)]
+[2025-08-08 17:37:19,082: INFO: data_transformation: No skewed columns found, skipping normalization.]
+[2025-08-08 17:37:19,092: INFO: data_transformation: Minimum sample in any class: 2]
+[2025-08-08 17:37:19,098: ERROR: main: Expected n_neighbors <= n_samples_fit, but n_neighbors = 3, n_samples_fit = 2, n_samples = 2]
+Traceback (most recent call last):
+  File "C:\Users\admin\OneDrive\Dokumen\Portofolio\Data Sceince (Python)\End-to-end\main.py", line 33, in <module>
+    obj.main()
+  File "c:\users\admin\onedrive\dokumen\portofolio\data sceince (python)\end-to-end\src\end_to_end_project\pipeline\stage_03_data_transformation.py", line 16, in main
+    data_transformation.run_data_transformation()
+  File "c:\users\admin\onedrive\dokumen\portofolio\data sceince (python)\end-to-end\src\end_to_end_project\components\data_transformation.py", line 85, in run_data_transformation
+    train = self.handle_imbalenced(train)
+  File "c:\users\admin\onedrive\dokumen\portofolio\data sceince (python)\end-to-end\src\end_to_end_project\components\data_transformation.py", line 66, in handle_imbalenced
+    X_resampled, y_resampled = smote.fit_resample(X, y)
+  File "C:\Users\admin\anaconda3\envs\n2nProject\lib\site-packages\imblearn\base.py", line 202, in fit_resample
+    return super().fit_resample(X, y, **params)
+  File "C:\Users\admin\anaconda3\envs\n2nProject\lib\site-packages\sklearn\base.py", line 1389, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "C:\Users\admin\anaconda3\envs\n2nProject\lib\site-packages\imblearn\base.py", line 105, in fit_resample
+    output = self._fit_resample(X, y, **params)
+  File "C:\Users\admin\anaconda3\envs\n2nProject\lib\site-packages\imblearn\over_sampling\_smote\base.py", line 359, in _fit_resample
+    nns = self.nn_k_.kneighbors(X_class, return_distance=False)[:, 1:]
+  File "C:\Users\admin\anaconda3\envs\n2nProject\lib\site-packages\sklearn\neighbors\_base.py", line 854, in kneighbors
+    raise ValueError(
+ValueError: Expected n_neighbors <= n_samples_fit, but n_neighbors = 3, n_samples_fit = 2, n_samples = 2
+[2025-08-08 22:54:44,654: INFO: main: >>>>>> stage Data Ingestion Stage started <<<<<<]
+[2025-08-08 22:54:44,661: INFO: common: YAML file: config\config.yaml loaded successfully]
+[2025-08-08 22:54:44,666: INFO: common: YAML file: params.yaml loaded successfully]
+[2025-08-08 22:54:44,669: INFO: common: YAML file: schema.yaml loaded successfully]
+[2025-08-08 22:54:44,669: INFO: common: Created directory at: artifacts]
+[2025-08-08 22:54:44,669: INFO: common: Created directory at: artifacts/data_ingestion]
+[2025-08-08 22:54:44,669: INFO: data_ingestion: File already exists of size: 22.7822265625 KB]
+[2025-08-08 22:54:44,683: INFO: data_ingestion: Extracted zip file to : artifacts/data_ingestion]
+[2025-08-08 22:54:44,683: INFO: main: >>>>>> stage Data Ingestion Stage completed <<<<<<]
+[2025-08-08 22:54:44,683: INFO: main: >>>>>> stage Data Validation Stage started <<<<<<]
+[2025-08-08 22:54:44,699: INFO: common: YAML file: config\config.yaml loaded successfully]
+[2025-08-08 22:54:44,707: INFO: common: YAML file: params.yaml loaded successfully]
+[2025-08-08 22:54:44,722: INFO: common: YAML file: schema.yaml loaded successfully]
+[2025-08-08 22:54:44,730: INFO: common: Created directory at: artifacts]
+[2025-08-08 22:54:44,730: INFO: common: Created directory at: artifacts/data_validation]
+[2025-08-08 22:54:44,789: INFO: main: >>>>>> stage Data Validation Stage completed <<<<<<]
+[2025-08-08 22:54:44,798: INFO: main: >>>>>> stage Data Transformation Stage started <<<<<<]
+[2025-08-08 22:54:44,822: INFO: common: YAML file: config\config.yaml loaded successfully]
+[2025-08-08 22:54:44,830: INFO: common: YAML file: params.yaml loaded successfully]
+[2025-08-08 22:54:44,838: INFO: common: YAML file: schema.yaml loaded successfully]
+[2025-08-08 22:54:44,862: INFO: common: Created directory at: artifacts]
+[2025-08-08 22:54:44,870: INFO: common: Created directory at: artifacts/data_transformation]
+[2025-08-08 22:54:44,934: INFO: data_transformation: Cleaned data shape: (1359, 12)]
+[2025-08-08 22:54:44,990: INFO: data_transformation: No skewed columns found, skipping normalization.]
+[2025-08-08 22:54:44,990: INFO: data_transformation: Minimum sample in any class: 2]
+[2025-08-08 22:54:50,515: INFO: data_transformation: Processed train and test data saved at artifacts\data_transformation]
+[2025-08-08 22:54:50,515: INFO: data_transformation: Train data shape: (1974, 12), Test data shape: (340, 12)]
+[2025-08-08 22:54:50,515: INFO: main: >>>>>> stage Data Transformation Stage completed <<<<<<]
+[2025-08-08 22:54:50,515: INFO: main: >>>>>> stage Model Training Stage started <<<<<<]
+[2025-08-08 22:54:50,523: INFO: common: YAML file: config\config.yaml loaded successfully]
+[2025-08-08 22:54:50,523: INFO: common: YAML file: params.yaml loaded successfully]
+[2025-08-08 22:54:50,531: INFO: common: YAML file: schema.yaml loaded successfully]
+[2025-08-08 22:54:50,539: INFO: common: Created directory at: artifacts]
+[2025-08-08 22:54:50,539: INFO: common: Created directory at: artifacts/model_training]
+[2025-08-08 22:54:50,612: INFO: main: >>>>>> stage Model Training Stage completed <<<<<<]
+[2025-08-08 22:54:50,612: INFO: main: >>>>>> stage Model Evaluation Stage started <<<<<<]
+[2025-08-08 22:54:50,620: INFO: common: YAML file: config\config.yaml loaded successfully]
+[2025-08-08 22:54:50,620: INFO: common: YAML file: params.yaml loaded successfully]
+[2025-08-08 22:54:50,620: INFO: common: YAML file: schema.yaml loaded successfully]
+[2025-08-08 22:54:50,620: INFO: common: Created directory at: artifacts]
+[2025-08-08 22:54:50,620: INFO: common: Created directory at: artifacts/model_evaluation]
+[2025-08-08 22:54:51,412: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2025-08-08 22:54:51,420: INFO: helpers: Accessing as rajwaAth]
+[2025-08-08 22:54:52,283: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/repos/rajwaAth/MLOps-Project "HTTP/1.1 200 OK"]
+[2025-08-08 22:54:53,047: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2025-08-08 22:54:53,055: INFO: helpers: Initialized MLflow to track repo "rajwaAth/MLOps-Project"]
+[2025-08-08 22:54:53,055: INFO: helpers: Repository rajwaAth/MLOps-Project initialized!]
+[2025-08-08 22:54:53,088: INFO: common: JSON file saved at: artifacts\model_evaluation\metrics.json]
+[2025-08-08 22:55:15,779: INFO: main: >>>>>> stage Model Evaluation Stage completed <<<<<<]
+[2025-08-08 23:05:26,069: INFO: main: >>>>>> stage Data Ingestion Stage started <<<<<<]
+[2025-08-08 23:05:26,083: INFO: common: YAML file: config\config.yaml loaded successfully]
+[2025-08-08 23:05:26,093: INFO: common: YAML file: params.yaml loaded successfully]
+[2025-08-08 23:05:26,096: INFO: common: YAML file: schema.yaml loaded successfully]
+[2025-08-08 23:05:26,101: INFO: common: Created directory at: artifacts]
+[2025-08-08 23:05:26,102: INFO: common: Created directory at: artifacts/data_ingestion]
+[2025-08-08 23:05:26,104: INFO: data_ingestion: File already exists of size: 22.7822265625 KB]
+[2025-08-08 23:05:26,120: INFO: data_ingestion: Extracted zip file to : artifacts/data_ingestion]
+[2025-08-08 23:05:26,121: INFO: main: >>>>>> stage Data Ingestion Stage completed <<<<<<]
+[2025-08-08 23:05:26,124: INFO: main: >>>>>> stage Data Validation Stage started <<<<<<]
+[2025-08-08 23:05:26,131: INFO: common: YAML file: config\config.yaml loaded successfully]
+[2025-08-08 23:05:26,137: INFO: common: YAML file: params.yaml loaded successfully]
+[2025-08-08 23:05:26,148: INFO: common: YAML file: schema.yaml loaded successfully]
+[2025-08-08 23:05:26,149: INFO: common: Created directory at: artifacts]
+[2025-08-08 23:05:26,150: INFO: common: Created directory at: artifacts/data_validation]
+[2025-08-08 23:05:26,219: INFO: main: >>>>>> stage Data Validation Stage completed <<<<<<]
+[2025-08-08 23:05:26,219: INFO: main: >>>>>> stage Data Transformation Stage started <<<<<<]
+[2025-08-08 23:05:26,228: INFO: common: YAML file: config\config.yaml loaded successfully]
+[2025-08-08 23:05:26,233: INFO: common: YAML file: params.yaml loaded successfully]
+[2025-08-08 23:05:26,240: INFO: common: YAML file: schema.yaml loaded successfully]
+[2025-08-08 23:05:26,246: INFO: common: Created directory at: artifacts]
+[2025-08-08 23:05:26,247: INFO: common: Created directory at: artifacts/data_transformation]
+[2025-08-08 23:05:26,297: INFO: data_transformation: Cleaned data shape: (1359, 12)]
+[2025-08-08 23:05:26,361: INFO: data_transformation: No skewed columns found, skipping normalization.]
+[2025-08-08 23:05:30,073: INFO: data_transformation: Processed train and test data saved at artifacts\data_transformation]
+[2025-08-08 23:05:30,081: INFO: data_transformation: Train data shape: (2574, 12), Test data shape: (340, 12)]
+[2025-08-08 23:05:30,082: INFO: main: >>>>>> stage Data Transformation Stage completed <<<<<<]
+[2025-08-08 23:05:30,083: INFO: main: >>>>>> stage Model Training Stage started <<<<<<]
+[2025-08-08 23:05:30,098: INFO: common: YAML file: config\config.yaml loaded successfully]
+[2025-08-08 23:05:30,100: INFO: common: YAML file: params.yaml loaded successfully]
+[2025-08-08 23:05:30,110: INFO: common: YAML file: schema.yaml loaded successfully]
+[2025-08-08 23:05:30,113: INFO: common: Created directory at: artifacts]
+[2025-08-08 23:05:30,114: INFO: common: Created directory at: artifacts/model_training]
+[2025-08-08 23:05:30,407: INFO: main: >>>>>> stage Model Training Stage completed <<<<<<]
+[2025-08-08 23:05:30,409: INFO: main: >>>>>> stage Model Evaluation Stage started <<<<<<]
+[2025-08-08 23:05:30,414: INFO: common: YAML file: config\config.yaml loaded successfully]
+[2025-08-08 23:05:30,438: INFO: common: YAML file: params.yaml loaded successfully]
+[2025-08-08 23:05:30,459: INFO: common: YAML file: schema.yaml loaded successfully]
+[2025-08-08 23:05:30,462: INFO: common: Created directory at: artifacts]
+[2025-08-08 23:05:30,466: INFO: common: Created directory at: artifacts/model_evaluation]
+[2025-08-08 23:05:31,315: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2025-08-08 23:05:31,352: INFO: helpers: Accessing as rajwaAth]
+[2025-08-08 23:05:32,092: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/repos/rajwaAth/MLOps-Project "HTTP/1.1 200 OK"]
+[2025-08-08 23:05:32,786: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2025-08-08 23:05:32,795: INFO: helpers: Initialized MLflow to track repo "rajwaAth/MLOps-Project"]
+[2025-08-08 23:05:32,797: INFO: helpers: Repository rajwaAth/MLOps-Project initialized!]
+[2025-08-08 23:05:32,843: INFO: common: JSON file saved at: artifacts\model_evaluation\metrics.json]
+[2025-08-08 23:05:55,279: INFO: main: >>>>>> stage Model Evaluation Stage completed <<<<<<]
+[2025-08-15 14:21:55,352: INFO: main: >>>>>> stage Data Ingestion Stage started <<<<<<]
+[2025-08-15 14:21:55,378: INFO: common: YAML file: config\config.yaml loaded successfully]
+[2025-08-15 14:21:55,391: INFO: common: YAML file: params.yaml loaded successfully]
+[2025-08-15 14:21:55,401: INFO: common: YAML file: schema.yaml loaded successfully]
+[2025-08-15 14:21:55,408: INFO: common: Created directory at: artifacts]
+[2025-08-15 14:21:55,409: INFO: common: Created directory at: artifacts/data_ingestion]
+[2025-08-15 14:21:55,410: INFO: data_ingestion: File already exists of size: 22.7822265625 KB]
+[2025-08-15 14:21:55,439: INFO: data_ingestion: Extracted zip file to : artifacts/data_ingestion]
+[2025-08-15 14:21:55,440: INFO: main: >>>>>> stage Data Ingestion Stage completed <<<<<<]
+[2025-08-15 14:21:55,440: INFO: main: >>>>>> stage Data Validation Stage started <<<<<<]
+[2025-08-15 14:21:55,447: INFO: common: YAML file: config\config.yaml loaded successfully]
+[2025-08-15 14:21:55,456: INFO: common: YAML file: params.yaml loaded successfully]
+[2025-08-15 14:21:55,460: INFO: common: YAML file: schema.yaml loaded successfully]
+[2025-08-15 14:21:55,462: INFO: common: Created directory at: artifacts]
+[2025-08-15 14:21:55,462: INFO: common: Created directory at: artifacts/data_validation]
+[2025-08-15 14:21:55,505: INFO: main: >>>>>> stage Data Validation Stage completed <<<<<<]
+[2025-08-15 14:21:55,506: INFO: main: >>>>>> stage Data Transformation Stage started <<<<<<]
+[2025-08-15 14:21:55,515: INFO: common: YAML file: config\config.yaml loaded successfully]
+[2025-08-15 14:21:55,516: INFO: common: YAML file: params.yaml loaded successfully]
+[2025-08-15 14:21:55,519: INFO: common: YAML file: schema.yaml loaded successfully]
+[2025-08-15 14:21:55,519: INFO: common: Created directory at: artifacts]
+[2025-08-15 14:21:55,519: INFO: common: Created directory at: artifacts/data_transformation]
+[2025-08-15 14:21:55,558: INFO: data_transformation: Cleaned data shape: (1359, 12)]
+[2025-08-15 14:22:02,011: INFO: data_transformation: Processed train and test data saved at artifacts\data_transformation]
+[2025-08-15 14:22:02,014: INFO: data_transformation: Train data shape: (2574, 12), Test data shape: (340, 12)]
+[2025-08-15 14:22:02,014: INFO: main: >>>>>> stage Data Transformation Stage completed <<<<<<]
+[2025-08-15 14:22:02,015: INFO: main: >>>>>> stage Model Training Stage started <<<<<<]
+[2025-08-15 14:22:02,017: INFO: common: YAML file: config\config.yaml loaded successfully]
+[2025-08-15 14:22:02,020: INFO: common: YAML file: params.yaml loaded successfully]
+[2025-08-15 14:22:02,024: INFO: common: YAML file: schema.yaml loaded successfully]
+[2025-08-15 14:22:02,028: INFO: common: Created directory at: artifacts]
+[2025-08-15 14:22:02,029: INFO: common: Created directory at: artifacts/model_training]
+[2025-08-15 14:22:02,114: INFO: main: >>>>>> stage Model Training Stage completed <<<<<<]
+[2025-08-15 14:22:02,115: INFO: main: >>>>>> stage Model Evaluation Stage started <<<<<<]
+[2025-08-15 14:22:02,121: INFO: common: YAML file: config\config.yaml loaded successfully]
+[2025-08-15 14:22:02,123: INFO: common: YAML file: params.yaml loaded successfully]
+[2025-08-15 14:22:02,130: INFO: common: YAML file: schema.yaml loaded successfully]
+[2025-08-15 14:22:02,132: INFO: common: Created directory at: artifacts]
+[2025-08-15 14:22:02,137: INFO: common: Created directory at: artifacts/model_evaluation]
+[2025-08-15 14:22:02,949: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2025-08-15 14:22:02,997: INFO: helpers: Accessing as rajwaAth]
+[2025-08-15 14:22:03,765: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/repos/rajwaAth/MLOps-Project "HTTP/1.1 200 OK"]
+[2025-08-15 14:22:04,481: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2025-08-15 14:22:04,502: INFO: helpers: Initialized MLflow to track repo "rajwaAth/MLOps-Project"]
+[2025-08-15 14:22:04,507: INFO: helpers: Repository rajwaAth/MLOps-Project initialized!]
+[2025-08-15 14:22:04,581: INFO: common: JSON file saved at: artifacts\model_evaluation\metrics.json]
+[2025-08-15 14:22:29,155: INFO: main: >>>>>> stage Model Evaluation Stage completed <<<<<<]
+[2025-08-15 14:25:28,490: INFO: main: >>>>>> stage Data Ingestion Stage started <<<<<<]
+[2025-08-15 14:25:28,493: INFO: common: YAML file: config\config.yaml loaded successfully]
+[2025-08-15 14:25:28,503: INFO: common: YAML file: params.yaml loaded successfully]
+[2025-08-15 14:25:28,507: INFO: common: YAML file: schema.yaml loaded successfully]
+[2025-08-15 14:25:28,510: INFO: common: Created directory at: artifacts]
+[2025-08-15 14:25:28,510: INFO: common: Created directory at: artifacts/data_ingestion]
+[2025-08-15 14:25:28,511: INFO: data_ingestion: File already exists of size: 22.7822265625 KB]
+[2025-08-15 14:25:28,518: INFO: data_ingestion: Extracted zip file to : artifacts/data_ingestion]
+[2025-08-15 14:25:28,520: INFO: main: >>>>>> stage Data Ingestion Stage completed <<<<<<]
+[2025-08-15 14:25:28,521: INFO: main: >>>>>> stage Data Validation Stage started <<<<<<]
+[2025-08-15 14:25:28,528: INFO: common: YAML file: config\config.yaml loaded successfully]
+[2025-08-15 14:25:28,530: INFO: common: YAML file: params.yaml loaded successfully]
+[2025-08-15 14:25:28,531: INFO: common: YAML file: schema.yaml loaded successfully]
+[2025-08-15 14:25:28,539: INFO: common: Created directory at: artifacts]
+[2025-08-15 14:25:28,541: INFO: common: Created directory at: artifacts/data_validation]
+[2025-08-15 14:25:28,587: INFO: main: >>>>>> stage Data Validation Stage completed <<<<<<]
+[2025-08-15 14:25:28,589: INFO: main: >>>>>> stage Data Transformation Stage started <<<<<<]
+[2025-08-15 14:25:28,594: INFO: common: YAML file: config\config.yaml loaded successfully]
+[2025-08-15 14:25:28,598: INFO: common: YAML file: params.yaml loaded successfully]
+[2025-08-15 14:25:28,603: INFO: common: YAML file: schema.yaml loaded successfully]
+[2025-08-15 14:25:28,605: INFO: common: Created directory at: artifacts]
+[2025-08-15 14:25:28,606: INFO: common: Created directory at: artifacts/data_transformation]
+[2025-08-15 14:25:28,622: INFO: data_transformation: Cleaned data shape: (1359, 12)]
+[2025-08-15 14:25:33,164: INFO: data_transformation: Processed train and test data saved at artifacts\data_transformation]
+[2025-08-15 14:25:33,165: INFO: data_transformation: Train data shape: (2574, 12), Test data shape: (340, 12)]
+[2025-08-15 14:25:33,165: INFO: main: >>>>>> stage Data Transformation Stage completed <<<<<<]
+[2025-08-15 14:25:33,166: INFO: main: >>>>>> stage Model Training Stage started <<<<<<]
+[2025-08-15 14:25:33,167: INFO: common: YAML file: config\config.yaml loaded successfully]
+[2025-08-15 14:25:33,172: INFO: common: YAML file: params.yaml loaded successfully]
+[2025-08-15 14:25:33,177: INFO: common: YAML file: schema.yaml loaded successfully]
+[2025-08-15 14:25:33,179: INFO: common: Created directory at: artifacts]
+[2025-08-15 14:25:33,180: INFO: common: Created directory at: artifacts/model_training]
+[2025-08-15 14:25:33,255: INFO: main: >>>>>> stage Model Training Stage completed <<<<<<]
+[2025-08-15 14:25:33,255: INFO: main: >>>>>> stage Model Evaluation Stage started <<<<<<]
+[2025-08-15 14:25:33,260: INFO: common: YAML file: config\config.yaml loaded successfully]
+[2025-08-15 14:25:33,264: INFO: common: YAML file: params.yaml loaded successfully]
+[2025-08-15 14:25:33,268: INFO: common: YAML file: schema.yaml loaded successfully]
+[2025-08-15 14:25:33,272: INFO: common: Created directory at: artifacts]
+[2025-08-15 14:25:33,273: INFO: common: Created directory at: artifacts/model_evaluation]
+[2025-08-15 14:25:33,993: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2025-08-15 14:25:34,018: INFO: helpers: Accessing as rajwaAth]
+[2025-08-15 14:25:34,762: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/repos/rajwaAth/MLOps-Project "HTTP/1.1 200 OK"]
+[2025-08-15 14:25:35,534: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2025-08-15 14:25:35,545: INFO: helpers: Initialized MLflow to track repo "rajwaAth/MLOps-Project"]
+[2025-08-15 14:25:35,555: INFO: helpers: Repository rajwaAth/MLOps-Project initialized!]
+[2025-08-15 14:25:35,579: INFO: common: JSON file saved at: artifacts\model_evaluation\metrics.json]
+[2025-08-15 14:25:53,950: INFO: main: >>>>>> stage Model Evaluation Stage completed <<<<<<]
+[2025-08-15 14:26:28,836: INFO: main: >>>>>> stage Data Ingestion Stage started <<<<<<]
+[2025-08-15 14:26:28,839: INFO: common: YAML file: config\config.yaml loaded successfully]
+[2025-08-15 14:26:28,844: INFO: common: YAML file: params.yaml loaded successfully]
+[2025-08-15 14:26:28,848: INFO: common: YAML file: schema.yaml loaded successfully]
+[2025-08-15 14:26:28,850: INFO: common: Created directory at: artifacts]
+[2025-08-15 14:26:28,851: INFO: common: Created directory at: artifacts/data_ingestion]
+[2025-08-15 14:26:28,851: INFO: data_ingestion: File already exists of size: 22.7822265625 KB]
+[2025-08-15 14:26:28,859: INFO: data_ingestion: Extracted zip file to : artifacts/data_ingestion]
+[2025-08-15 14:26:28,860: INFO: main: >>>>>> stage Data Ingestion Stage completed <<<<<<]
+[2025-08-15 14:26:28,861: INFO: main: >>>>>> stage Data Validation Stage started <<<<<<]
+[2025-08-15 14:26:28,865: INFO: common: YAML file: config\config.yaml loaded successfully]
+[2025-08-15 14:26:28,877: INFO: common: YAML file: params.yaml loaded successfully]
+[2025-08-15 14:26:28,885: INFO: common: YAML file: schema.yaml loaded successfully]
+[2025-08-15 14:26:28,887: INFO: common: Created directory at: artifacts]
+[2025-08-15 14:26:28,889: INFO: common: Created directory at: artifacts/data_validation]
+[2025-08-15 14:26:28,930: INFO: main: >>>>>> stage Data Validation Stage completed <<<<<<]
+[2025-08-15 14:26:28,930: INFO: main: >>>>>> stage Data Transformation Stage started <<<<<<]
+[2025-08-15 14:26:28,940: INFO: common: YAML file: config\config.yaml loaded successfully]
+[2025-08-15 14:26:28,946: INFO: common: YAML file: params.yaml loaded successfully]
+[2025-08-15 14:26:28,951: INFO: common: YAML file: schema.yaml loaded successfully]
+[2025-08-15 14:26:28,955: INFO: common: Created directory at: artifacts]
+[2025-08-15 14:26:28,956: INFO: common: Created directory at: artifacts/data_transformation]
+[2025-08-15 14:26:28,973: INFO: data_transformation: Cleaned data shape: (1359, 12)]
+[2025-08-15 14:26:29,005: INFO: data_transformation: Processed train and test data saved at artifacts\data_transformation]
+[2025-08-15 14:26:29,005: INFO: data_transformation: Train data shape: (1019, 12), Test data shape: (340, 12)]
+[2025-08-15 14:26:29,006: INFO: main: >>>>>> stage Data Transformation Stage completed <<<<<<]
+[2025-08-15 14:26:29,007: INFO: main: >>>>>> stage Model Training Stage started <<<<<<]
+[2025-08-15 14:26:29,012: INFO: common: YAML file: config\config.yaml loaded successfully]
+[2025-08-15 14:26:29,015: INFO: common: YAML file: params.yaml loaded successfully]
+[2025-08-15 14:26:29,017: INFO: common: YAML file: schema.yaml loaded successfully]
+[2025-08-15 14:26:29,023: INFO: common: Created directory at: artifacts]
+[2025-08-15 14:26:29,025: INFO: common: Created directory at: artifacts/model_training]
+[2025-08-15 14:26:29,085: INFO: main: >>>>>> stage Model Training Stage completed <<<<<<]
+[2025-08-15 14:26:29,085: INFO: main: >>>>>> stage Model Evaluation Stage started <<<<<<]
+[2025-08-15 14:26:29,092: INFO: common: YAML file: config\config.yaml loaded successfully]
+[2025-08-15 14:26:29,094: INFO: common: YAML file: params.yaml loaded successfully]
+[2025-08-15 14:26:29,100: INFO: common: YAML file: schema.yaml loaded successfully]
+[2025-08-15 14:26:29,102: INFO: common: Created directory at: artifacts]
+[2025-08-15 14:26:29,103: INFO: common: Created directory at: artifacts/model_evaluation]
+[2025-08-15 14:26:29,804: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2025-08-15 14:26:29,817: INFO: helpers: Accessing as rajwaAth]
+[2025-08-15 14:26:30,502: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/repos/rajwaAth/MLOps-Project "HTTP/1.1 200 OK"]
+[2025-08-15 14:26:31,341: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2025-08-15 14:26:31,346: INFO: helpers: Initialized MLflow to track repo "rajwaAth/MLOps-Project"]
+[2025-08-15 14:26:31,347: INFO: helpers: Repository rajwaAth/MLOps-Project initialized!]
+[2025-08-15 14:26:31,370: INFO: common: JSON file saved at: artifacts\model_evaluation\metrics.json]
+[2025-08-15 14:26:50,593: INFO: main: >>>>>> stage Model Evaluation Stage completed <<<<<<]
+[2025-08-15 14:28:57,395: INFO: main: >>>>>> stage Data Ingestion Stage started <<<<<<]
+[2025-08-15 14:28:57,400: INFO: common: YAML file: config\config.yaml loaded successfully]
+[2025-08-15 14:28:57,401: INFO: common: YAML file: params.yaml loaded successfully]
+[2025-08-15 14:28:57,407: INFO: common: YAML file: schema.yaml loaded successfully]
+[2025-08-15 14:28:57,408: INFO: common: Created directory at: artifacts]
+[2025-08-15 14:28:57,409: INFO: common: Created directory at: artifacts/data_ingestion]
+[2025-08-15 14:28:57,409: INFO: data_ingestion: File already exists of size: 22.7822265625 KB]
+[2025-08-15 14:28:57,418: INFO: data_ingestion: Extracted zip file to : artifacts/data_ingestion]
+[2025-08-15 14:28:57,423: INFO: main: >>>>>> stage Data Ingestion Stage completed <<<<<<]
+[2025-08-15 14:28:57,424: INFO: main: >>>>>> stage Data Validation Stage started <<<<<<]
+[2025-08-15 14:28:57,432: INFO: common: YAML file: config\config.yaml loaded successfully]
+[2025-08-15 14:28:57,436: INFO: common: YAML file: params.yaml loaded successfully]
+[2025-08-15 14:28:57,441: INFO: common: YAML file: schema.yaml loaded successfully]
+[2025-08-15 14:28:57,447: INFO: common: Created directory at: artifacts]
+[2025-08-15 14:28:57,448: INFO: common: Created directory at: artifacts/data_validation]
+[2025-08-15 14:28:57,495: INFO: main: >>>>>> stage Data Validation Stage completed <<<<<<]
+[2025-08-15 14:28:57,497: INFO: main: >>>>>> stage Data Transformation Stage started <<<<<<]
+[2025-08-15 14:28:57,507: INFO: common: YAML file: config\config.yaml loaded successfully]
+[2025-08-15 14:28:57,509: INFO: common: YAML file: params.yaml loaded successfully]
+[2025-08-15 14:28:57,513: INFO: common: YAML file: schema.yaml loaded successfully]
+[2025-08-15 14:28:57,513: INFO: common: Created directory at: artifacts]
+[2025-08-15 14:28:57,514: INFO: common: Created directory at: artifacts/data_transformation]
+[2025-08-15 14:28:57,545: INFO: data_transformation: Processed train and test data saved at artifacts\data_transformation]
+[2025-08-15 14:28:57,545: INFO: data_transformation: Train data shape: (1199, 12), Test data shape: (400, 12)]
+[2025-08-15 14:28:57,545: INFO: main: >>>>>> stage Data Transformation Stage completed <<<<<<]
+[2025-08-15 14:28:57,546: INFO: main: >>>>>> stage Model Training Stage started <<<<<<]
+[2025-08-15 14:28:57,547: INFO: common: YAML file: config\config.yaml loaded successfully]
+[2025-08-15 14:28:57,552: INFO: common: YAML file: params.yaml loaded successfully]
+[2025-08-15 14:28:57,557: INFO: common: YAML file: schema.yaml loaded successfully]
+[2025-08-15 14:28:57,559: INFO: common: Created directory at: artifacts]
+[2025-08-15 14:28:57,559: INFO: common: Created directory at: artifacts/model_training]
+[2025-08-15 14:28:57,608: INFO: main: >>>>>> stage Model Training Stage completed <<<<<<]
+[2025-08-15 14:28:57,612: INFO: main: >>>>>> stage Model Evaluation Stage started <<<<<<]
+[2025-08-15 14:28:57,615: INFO: common: YAML file: config\config.yaml loaded successfully]
+[2025-08-15 14:28:57,618: INFO: common: YAML file: params.yaml loaded successfully]
+[2025-08-15 14:28:57,620: INFO: common: YAML file: schema.yaml loaded successfully]
+[2025-08-15 14:28:57,621: INFO: common: Created directory at: artifacts]
+[2025-08-15 14:28:57,623: INFO: common: Created directory at: artifacts/model_evaluation]
+[2025-08-15 14:28:58,388: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2025-08-15 14:28:58,427: INFO: helpers: Accessing as rajwaAth]
+[2025-08-15 14:28:59,310: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/repos/rajwaAth/MLOps-Project "HTTP/1.1 200 OK"]
+[2025-08-15 14:29:00,435: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2025-08-15 14:29:00,444: INFO: helpers: Initialized MLflow to track repo "rajwaAth/MLOps-Project"]
+[2025-08-15 14:29:00,461: INFO: helpers: Repository rajwaAth/MLOps-Project initialized!]
+[2025-08-15 14:29:00,543: INFO: common: JSON file saved at: artifacts\model_evaluation\metrics.json]
+[2025-08-15 14:29:22,260: INFO: main: >>>>>> stage Model Evaluation Stage completed <<<<<<]
+[2025-08-15 14:29:41,790: INFO: stage_03_data_transformation: >>>>>> stage Data Transformation started <<<<<<]
+[2025-08-15 14:29:41,792: INFO: common: YAML file: config\config.yaml loaded successfully]
+[2025-08-15 14:29:41,795: INFO: common: YAML file: params.yaml loaded successfully]
+[2025-08-15 14:29:41,799: INFO: common: YAML file: schema.yaml loaded successfully]
+[2025-08-15 14:29:41,801: INFO: common: Created directory at: artifacts]
+[2025-08-15 14:29:41,803: INFO: common: Created directory at: artifacts/data_transformation]
+[2025-08-15 14:29:41,812: INFO: data_transformation: Cleaned data shape: (1359, 12)]
+[2025-08-15 14:29:41,842: INFO: data_transformation: Processed train and test data saved at artifacts\data_transformation]
+[2025-08-15 14:29:41,845: INFO: data_transformation: Train data shape: (1019, 12), Test data shape: (340, 12)]
+[2025-08-15 14:29:41,846: INFO: stage_03_data_transformation: >>>>>> stage Data Transformation completed <<<<<<]
+[2025-08-15 14:29:55,498: INFO: main: >>>>>> stage Data Ingestion Stage started <<<<<<]
+[2025-08-15 14:29:55,501: INFO: common: YAML file: config\config.yaml loaded successfully]
+[2025-08-15 14:29:55,504: INFO: common: YAML file: params.yaml loaded successfully]
+[2025-08-15 14:29:55,506: INFO: common: YAML file: schema.yaml loaded successfully]
+[2025-08-15 14:29:55,508: INFO: common: Created directory at: artifacts]
+[2025-08-15 14:29:55,508: INFO: common: Created directory at: artifacts/data_ingestion]
+[2025-08-15 14:29:55,509: INFO: data_ingestion: File already exists of size: 22.7822265625 KB]
+[2025-08-15 14:29:55,513: INFO: data_ingestion: Extracted zip file to : artifacts/data_ingestion]
+[2025-08-15 14:29:55,516: INFO: main: >>>>>> stage Data Ingestion Stage completed <<<<<<]
+[2025-08-15 14:29:55,517: INFO: main: >>>>>> stage Data Validation Stage started <<<<<<]
+[2025-08-15 14:29:55,521: INFO: common: YAML file: config\config.yaml loaded successfully]
+[2025-08-15 14:29:55,527: INFO: common: YAML file: params.yaml loaded successfully]
+[2025-08-15 14:29:55,534: INFO: common: YAML file: schema.yaml loaded successfully]
+[2025-08-15 14:29:55,536: INFO: common: Created directory at: artifacts]
+[2025-08-15 14:29:55,537: INFO: common: Created directory at: artifacts/data_validation]
+[2025-08-15 14:29:55,590: INFO: main: >>>>>> stage Data Validation Stage completed <<<<<<]
+[2025-08-15 14:29:55,590: INFO: main: >>>>>> stage Data Transformation Stage started <<<<<<]
+[2025-08-15 14:29:55,595: INFO: common: YAML file: config\config.yaml loaded successfully]
+[2025-08-15 14:29:55,597: INFO: common: YAML file: params.yaml loaded successfully]
+[2025-08-15 14:29:55,603: INFO: common: YAML file: schema.yaml loaded successfully]
+[2025-08-15 14:29:55,603: INFO: common: Created directory at: artifacts]
+[2025-08-15 14:29:55,605: INFO: common: Created directory at: artifacts/data_transformation]
+[2025-08-15 14:29:55,623: INFO: data_transformation: Cleaned data shape: (1359, 12)]
+[2025-08-15 14:29:55,651: INFO: data_transformation: Processed train and test data saved at artifacts\data_transformation]
+[2025-08-15 14:29:55,652: INFO: data_transformation: Train data shape: (1019, 12), Test data shape: (340, 12)]
+[2025-08-15 14:29:55,652: INFO: main: >>>>>> stage Data Transformation Stage completed <<<<<<]
+[2025-08-15 14:29:55,653: INFO: main: >>>>>> stage Model Training Stage started <<<<<<]
+[2025-08-15 14:29:55,657: INFO: common: YAML file: config\config.yaml loaded successfully]
+[2025-08-15 14:29:55,660: INFO: common: YAML file: params.yaml loaded successfully]
+[2025-08-15 14:29:55,663: INFO: common: YAML file: schema.yaml loaded successfully]
+[2025-08-15 14:29:55,664: INFO: common: Created directory at: artifacts]
+[2025-08-15 14:29:55,666: INFO: common: Created directory at: artifacts/model_training]
+[2025-08-15 14:29:55,732: INFO: main: >>>>>> stage Model Training Stage completed <<<<<<]
+[2025-08-15 14:29:55,734: INFO: main: >>>>>> stage Model Evaluation Stage started <<<<<<]
+[2025-08-15 14:29:55,738: INFO: common: YAML file: config\config.yaml loaded successfully]
+[2025-08-15 14:29:55,742: INFO: common: YAML file: params.yaml loaded successfully]
+[2025-08-15 14:29:55,744: INFO: common: YAML file: schema.yaml loaded successfully]
+[2025-08-15 14:29:55,746: INFO: common: Created directory at: artifacts]
+[2025-08-15 14:29:55,747: INFO: common: Created directory at: artifacts/model_evaluation]
+[2025-08-15 14:29:56,454: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2025-08-15 14:29:56,485: INFO: helpers: Accessing as rajwaAth]
+[2025-08-15 14:29:57,257: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/repos/rajwaAth/MLOps-Project "HTTP/1.1 200 OK"]
+[2025-08-15 14:29:57,988: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2025-08-15 14:29:58,006: INFO: helpers: Initialized MLflow to track repo "rajwaAth/MLOps-Project"]
+[2025-08-15 14:29:58,011: INFO: helpers: Repository rajwaAth/MLOps-Project initialized!]
+[2025-08-15 14:29:58,054: INFO: common: JSON file saved at: artifacts\model_evaluation\metrics.json]
+[2025-08-15 14:30:17,747: INFO: main: >>>>>> stage Model Evaluation Stage completed <<<<<<]

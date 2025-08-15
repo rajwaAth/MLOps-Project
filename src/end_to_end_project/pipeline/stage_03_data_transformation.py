@@ -12,12 +12,9 @@ class DataTransformationPipeline:
     def main(self):
         config = ConfigurationManager()
         data_transformation_config = config.get_data_transformation_config()
-        data_transformation = DataTransformation(config=data_transformation_config)
-        data_transformation.train_test_split(
-            df = pd.read_csv(data_transformation_config.data_path),
-            test_size= 0.25,
-            random_state= 42)
-        
+        data_transformation = DataTransformation(df=pd.read_csv(data_transformation_config.data_path), config=data_transformation_config)
+        data_transformation.run_data_transformation(do_clean=True, do_split=True, do_outliers=False, do_skewness=False, do_imbalanced=False)
+
 if __name__ == "__main__":
     try:
         logger.info(f">>>>>> stage {STAGE_NAME} started <<<<<<")

@@ -1,179 +1,275 @@
-# End to end project machine learning pipeline
+# 🍷 Wine Quality Prediction - End-to-End MLOps Project
 
-## Workflow
+![Python](https://img.shields.io/badge/Python-3.10+-blue)
+![Flask](https://img.shields.io/badge/Flask-Web%20App-green)
+![Docker](https://img.shields.io/badge/Docker-Containerized-blue)
+![MLOps](https://img.shields.io/badge/MLOps-Pipeline-orange)
 
-1. Update config.yaml
-2. Update schema.yaml
-3. Update params.yaml
-4. Update the entity
-5. Update the configuration manager in src config
-6. Update the components
-7. Update the pipeline
-8. Update the main.py
-9. Update the app.py# End-to-end-Machine-Learning-Project-with-MLflow
+## 📋 Overview
 
+This is a comprehensive **End-to-End MLOps project** that predicts wine quality based on various chemical properties. The project implements a complete machine learning pipeline from data ingestion to model deployment with a web interface.
 
-## Workflows
+The model uses **ElasticNet Regression** to predict wine quality scores based on 11 chemical features such as acidity, sugar content, pH levels, and alcohol percentage.
 
-1. Update config.yaml
-2. Update schema.yaml
-3. Update params.yaml
-4. Update the entity
-5. Update the configuration manager in src config
-6. Update the components
-7. Update the pipeline 
-8. Update the main.py
-9. Update the app.py
+## 🏗️ Architecture
 
+The project follows MLOps best practices with a modular pipeline architecture:
 
-
-# How to run?
-### STEPS:
-
-Clone the repository
-
-```bash
-https://github.com/rajwaAth/MLOps-Project
 ```
-### STEP 01- Create a conda environment after opening the repository
-
-```bash
-conda create -n n2nProject python=3.13 -y
+📦 MLOps Pipeline
+├── 🔄 Data Ingestion
+├── ✅ Data Validation  
+├── 🔧 Data Transformation
+├── 🤖 Model Training
+├── 📊 Model Evaluation
+└── 🚀 Model Deployment
 ```
 
-```bash
-conda activate n2nProject
+## 🚀 Features
+
+- **End-to-End ML Pipeline**: Automated workflow from data ingestion to deployment
+- **Web Interface**: User-friendly Flask web application for predictions
+- **Docker Support**: Containerized application for easy deployment
+- **Modular Design**: Clean, maintainable code structure
+- **Configuration Management**: YAML-based configuration system
+- **Logging**: Comprehensive logging throughout the pipeline
+- **Model Persistence**: Trained models saved using joblib
+
+## 🛠️ Technology Stack
+
+- **Language**: Python 3.10
+- **ML Framework**: Scikit-learn
+- **Web Framework**: Flask
+- **Data Processing**: Pandas, NumPy
+- **Containerization**: Docker
+- **Configuration**: YAML
+- **Model Algorithm**: ElasticNet Regression
+
+## 📁 Project Structure
+
+```
+📂 End-to-end/
+├── 📱 app.py                    # Flask web application
+├── 🐳 Dockerfile               # Docker configuration
+├── 🔧 main.py                  # Main pipeline execution
+├── ⚙️ params.yaml              # Model parameters
+├── 📋 requirements.txt         # Dependencies
+├── 🗂️ schema.yaml             # Data schema
+├── 🔧 setup.py                 # Package setup
+├── 📝 tamplate.py              # Template generator
+├── 
+├── 📊 artifacts/               # Generated artifacts
+│   ├── data_ingestion/         # Raw and processed data
+│   ├── data_transformation/    # Train/test splits
+│   ├── data_validation/        # Validation reports
+│   ├── model_evaluation/       # Model metrics
+│   └── model_training/         # Trained models
+├── 
+├── ⚙️ config/                  # Configuration files
+│   └── config.yaml             # Main configuration
+├── 
+├── 📓 research/                # Jupyter notebooks
+│   ├── 01_data_ingestion.ipynb
+│   ├── 02_data_validation.ipynb
+│   ├── 03_data_transformation.ipynb
+│   └── 05_model_evaluation.ipynb
+├── 
+├── 🏗️ src/end_to_end_project/  # Main package
+│   ├── components/             # ML components
+│   ├── config/                 # Configuration management
+│   ├── entity/                 # Data entities
+│   ├── pipeline/               # Pipeline stages
+│   └── utils/                  # Utility functions
+├── 
+├── 🎨 static/                  # Web assets (CSS, JS)
+└── 📄 templates/               # HTML templates
 ```
 
+## 🔧 Installation & Setup
 
-### STEP 02- install the requirements
+### Prerequisites
+- Python 3.10+
+- Git
+
+### Local Setup
+
+1. **Clone the repository**
+```bash
+git clone https://github.com/rajwaAth/MLOps-Project.git
+cd MLOps-Project
+```
+
+2. **Create virtual environment**
+```bash
+python -m venv venv
+# Windows
+venv\Scripts\activate
+# Linux/Mac
+source venv/bin/activate
+```
+
+3. **Install dependencies**
 ```bash
 pip install -r requirements.txt
 ```
 
-
+4. **Run the complete pipeline**
 ```bash
-# Finally run the following command
+python main.py
+```
+
+5. **Start the web application**
+```bash
 python app.py
 ```
 
-Now,
-```bash
-open up you local host and port
+6. **Access the application**
+```
+http://localhost:8080
 ```
 
+### Docker Setup
 
-
-## MLflow
-
-[Documentation](https://mlflow.org/docs/latest/index.html)
-
-
-##### cmd
-- mlflow ui
-
-### dagshub
-[dagshub](https://dagshub.com/)
-
-import dagshub
-dagshub.init(repo_owner='rajwaAth', repo_name='MLOps-Project', mlflow=True)
-
-import mlflow
-with mlflow.start_run():
-  mlflow.log_param('parameter name', 'value')
-  mlflow.log_metric('metric name', 1)
-
-Run this to export as env variables:
-
+1. **Build Docker image**
 ```bash
-
-.....
-
+docker build -t wine-quality-app .
 ```
 
+2. **Run Docker container**
+```bash
+docker run -p 8080:8080 wine-quality-app
+```
 
+## 🔄 Pipeline Stages
 
-# AWS-CICD-Deployment-with-Github-Actions
+### 1. Data Ingestion
+- Downloads wine quality dataset from remote source
+- Extracts and stores data in artifacts directory
+- **Location**: `src/end_to_end_project/components/data_ingestion.py`
 
-## 1. Login to AWS console.
+### 2. Data Validation
+- Validates data schema and quality
+- Checks for missing values and data types
+- Generates validation status report
+- **Location**: `src/end_to_end_project/components/data_validation.py`
 
-## 2. Create IAM user for deployment
+### 3. Data Transformation
+- Splits data into training and testing sets
+- Applies feature scaling and preprocessing
+- **Location**: `src/end_to_end_project/components/data_transformation.py`
 
-	#with specific access
+### 4. Model Training
+- Trains ElasticNet regression model
+- Uses hyperparameters from `params.yaml`
+- Saves trained model as joblib file
+- **Location**: `src/end_to_end_project/components/model_training.py`
 
-	1. EC2 access : It is virtual machine
+### 5. Model Evaluation
+- Evaluates model performance on test data
+- Generates metrics (RMSE, MAE, R²)
+- Saves evaluation results
+- **Location**: `src/end_to_end_project/components/model_evaluation.py`
 
-	2. ECR: Elastic Container registry to save your docker image in aws
+## 🌐 Web Application
 
+The Flask web application provides an intuitive interface for wine quality prediction:
 
-	#Description: About the deployment
+### Features:
+- **Input Form**: Enter wine chemical properties
+- **Real-time Prediction**: Get instant quality predictions
+- **Results Display**: View prediction with input summary
 
-	1. Build docker image of the source code
+### Input Parameters:
+- Fixed Acidity
+- Volatile Acidity  
+- Citric Acid
+- Residual Sugar
+- Chlorides
+- Free Sulfur Dioxide
+- Total Sulfur Dioxide
+- Density
+- pH
+- Sulphates
+- Alcohol
 
-	2. Push your docker image to ECR
+## 📊 Model Performance
 
-	3. Launch Your EC2 
+The ElasticNet regression model is configured with:
+- **Alpha**: 0.1 (regularization strength)
+- **L1 Ratio**: 0.05 (balance between L1 and L2 regularization)
 
-	4. Pull Your image from ECR in EC2
+Performance metrics are automatically generated and stored in `artifacts/model_evaluation/metrics.json`.
 
-	5. Lauch your docker image in EC2
+## 📝 Configuration
 
-	#Policy:
+### Main Configuration (`config/config.yaml`)
+- Defines paths for all pipeline stages
+- Configures data sources and destinations
+- Sets up artifact directories
 
-	1. AmazonEC2ContainerRegistryFullAccess
+### Model Parameters (`params.yaml`)
+- ElasticNet hyperparameters
+- Easily adjustable for experimentation
 
-	2. AmazonEC2FullAccess
+## 🚀 Deployment Options
 
-	
-## 3. Create ECR repo to store/save docker image
-    - Save the URI: 566373416292.dkr.ecr.ap-south-1.amazonaws.com/mlproj
+### Local Deployment
+```bash
+# Option A: run with default port (8080)
+python app.py
 
-	
-## 4. Create EC2 machine (Ubuntu) 
+# Option B: run on a custom port (e.g., 5000)
+# PowerShell
+$env:PORT=5000; python app.py
+# CMD
+set PORT=5000 && python app.py
+```
 
-## 5. Open EC2 and Install docker in EC2 Machine:
-	
-	
-	#optinal
+### Docker Deployment
+```bash
+docker build -t wine-quality-app .
+docker run -p 8080:8080 wine-quality-app
+```
 
-	sudo apt-get update -y
+### Cloud Deployment
+The application is containerized and ready for deployment on:
+- AWS ECS/EKS
+- Google Cloud Run
+- Azure Container Instances
+- Heroku
 
-	sudo apt-get upgrade
-	
-	#required
+## 🔮 Future Enhancements
 
-	curl -fsSL https://get.docker.com -o get-docker.sh
+- [ ] **CI/CD Pipeline**: GitHub Actions for automated testing and deployment
+- [ ] **Model Monitoring**: MLflow integration for experiment tracking
+- [ ] **API Documentation**: Swagger/OpenAPI documentation
+- [ ] **Advanced Models**: Experiment with Random Forest, XGBoost
+- [ ] **Feature Engineering**: Advanced feature selection and creation
+- [ ] **Real-time Monitoring**: Model performance monitoring in production
+- [ ] **A/B Testing**: Framework for model comparison
+- [ ] **Database Integration**: Store predictions and user interactions
 
-	sudo sh get-docker.sh
+## 🤝 Contributing
 
-	sudo usermod -aG docker ubuntu
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-	newgrp docker
-	
-# 6. Configure EC2 as self-hosted runner:
-    setting>actions>runner>new self hosted runner> choose os> then run command one by one
+## 👨‍💻 Author
 
+**mrath**
+- Email: rath@me.com
+- GitHub: [@rajwaAth](https://github.com/rajwaAth)
 
-# 7. Setup github secrets:
+## 🙏 Acknowledgments
 
-    AWS_ACCESS_KEY_ID=
+- Dataset source: [Wine Quality Dataset](https://github.com/entbappy/Branching-tutorial/raw/master/winequality-data.zip)
+- Inspiration from MLOps best practices and community
 
-    AWS_SECRET_ACCESS_KEY=
+---
 
-    AWS_REGION = us-east-1
-
-    AWS_ECR_LOGIN_URI = demo>>  566373416292.dkr.ecr.ap-south-1.amazonaws.com
-
-    ECR_REPOSITORY_NAME = simple-app
-
-
-
-
-## About MLflow 
-MLflow
-
- - Its Production Grade
- - Trace all of your expriements
- - Logging & tagging your model
-
-
+<div align="center">
+  <h3>⭐ If you found this project helpful, please give it a star! ⭐</h3>
+</div>
