@@ -260,7 +260,7 @@ The application is containerized and ready for deployment on:
 ## 👨‍💻 Author
 
 **mrath**
-- Email: rath@me.com
+- Email: thoriq004@gmail.com
 - GitHub: [@rajwaAth](https://github.com/rajwaAth)
 
 ## 🙏 Acknowledgments
