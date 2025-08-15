@@ -470,18 +470,8 @@
                     </div>
                     <div class="stat-card">
                         <span class="stat-value">
-                            {% if prediction|default(0) >= 7 %}95%
-                            {% elif prediction|default(0) >= 6 %}85%
-                            {% elif prediction|default(0) >= 5 %}75%
-                            {% else %}60%{% endif %}
-                        </span>
-                        <div class="stat-label">Confidence</div>
-                    </div>
-                    <div class="stat-card">
-                        <span class="stat-value">
-                            {% if prediction|default(0) >= 7 %}A+
-                            {% elif prediction|default(0) >= 6 %}A
-                            {% elif prediction|default(0) >= 5 %}B
+                            {% if prediction|default(0) >= 8 %}A
+                            {% elif prediction|default(0) >= 6 %}B
                             {% else %}C{% endif %}
                         </span>
                         <div class="stat-label">Grade</div>
